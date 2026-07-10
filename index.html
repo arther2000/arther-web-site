@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta charset="utf-8">
+<title>亞瑟教練｜政府補助申請實戰專家</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@600;700;900&display=swap" rel="stylesheet">
+<style>
+  body { margin: 0; background: #F8F6F1; font-family: 'Noto Sans TC', sans-serif; color: #1C2635; }
+  a { color: #B8913D; text-decoration: none; }
+  a:hover { color: #96742C; }
+  @media (max-width: 900px) {
+    nav { flex-wrap: wrap !important; height: auto !important; padding: 12px 16px !important; row-gap: 8px !important; }
+    nav > div { flex-wrap: wrap !important; gap: 8px 14px !important; font-size: 13px !important; }
+    section, header, footer, article { padding-left: 20px !important; padding-right: 20px !important; }
+    h1 { font-size: 32px !important; }
+    h2 { font-size: 26px !important; }
+    div[style*="grid-template-columns"], a[style*="grid-template-columns"] { grid-template-columns: 1fr !important; }
+    div[style*="repeat(4"] { grid-template-columns: 1fr 1fr !important; }
+    div[style*="gap:16px"], div[style*="gap: 16px"] { flex-wrap: wrap !important; }
+    .rwd-col { flex-direction: column !important; align-items: center !important; text-align: center !important; }
+  }
+</style>
+</helmet>
+
+<sc-if value="{{ showPromoBar }}" hint-placeholder-val="{{ true }}">
+<div style="background:#C9A24B;color:#071527;text-align:center;padding:10px 20px;font-size:15px;font-weight:700;letter-spacing:0.02em">
+  <span>🔴 免費直播課《90 分鐘學會拿政府補助》</span>
+  <span style="margin:0 8px">{{ liveDate }}</span>
+  <a href="sign-up.html" style="color:#071527;text-decoration:underline;font-weight:900">立即搶位 →</a>
+</div>
+</sc-if>
+
+<nav style="position:sticky;top:0;z-index:50;background:#0B1D33;display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:72px;box-shadow:0 2px 12px rgba(7,21,39,0.35)">
+  <a href="index.html" style="display:flex;align-items:baseline;gap:10px;color:#fff">
+    <span style="font-family:'Noto Serif TC',serif;font-size:22px;font-weight:900;color:#fff">亞瑟教練</span>
+    <span style="font-size:12px;letter-spacing:0.18em;color:#C9A24B;font-weight:700">ARTHUR WU</span>
+  </a>
+  <div style="display:flex;align-items:center;gap:32px;font-size:15px;font-weight:500">
+    <a href="index.html" style="color:#C9A24B;border-bottom:2px solid #C9A24B;padding-bottom:2px">首頁</a>
+    <a href="about.html" style="color:#E8E4DB" style-hover="color:#C9A24B">關於教練</a>
+    <a href="services.html" style="color:#E8E4DB" style-hover="color:#C9A24B">課程服務</a>
+    <a href="testimonials.html" style="color:#E8E4DB" style-hover="color:#C9A24B">學員見證</a>
+    <a href="blog.html" style="color:#E8E4DB" style-hover="color:#C9A24B">補助專欄</a>
+    <a href="faq.html" style="color:#E8E4DB" style-hover="color:#C9A24B">常見問題</a>
+    <a href="booking.html" style="color:#0B1D33;background:#fff;padding:10px 20px;border-radius:6px;font-weight:700" style-hover="background:#E8E4DB">預約諮詢</a>
+    <a href="sign-up.html" style="color:#071527;background:#C9A24B;padding:10px 20px;border-radius:6px;font-weight:900" style-hover="background:#D9B45E">報名免費直播</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header style="background:linear-gradient(160deg,#0B1D33 0%,#071527 70%);color:#fff;padding:96px 48px 0">
+  <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.2fr 0.8fr;gap:64px;align-items:end">
+    <div style="padding-bottom:96px">
+      <div style="display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(201,162,75,0.5);color:#C9A24B;font-size:14px;font-weight:700;letter-spacing:0.1em;padding:8px 16px;border-radius:100px;margin-bottom:28px">
+        <span>政府補助申請實戰專家</span>
+      </div>
+      <h1 style="font-family:'Noto Serif TC',serif;font-size:56px;line-height:1.25;font-weight:900;margin:0 0 24px">
+        <span>用政府的錢，</span><br>
+        <span style="color:#C9A24B">加速你的事業成長</span>
+      </h1>
+      <p style="font-size:19px;line-height:1.9;color:#B9C2CE;margin:0 0 40px;max-width:560px">30 天內掌握補助申請關鍵，輕鬆拿下 6～7 位數政府資金。不必花大錢請寫手——學會一套簡單、可複製、高通過率的申請流程。</p>
+      <div style="display:flex;gap:16px;margin-bottom:48px">
+        <a href="sign-up.html" style="background:#C9A24B;color:#071527;font-size:17px;font-weight:900;padding:16px 32px;border-radius:8px" style-hover="background:#D9B45E">報名免費直播課</a>
+        <a href="booking.html" style="border:1px solid rgba(255,255,255,0.35);color:#fff;font-size:17px;font-weight:700;padding:16px 32px;border-radius:8px" style-hover="border-color:#C9A24B;color:#C9A24B">預約 1:1 諮詢</a>
+      </div>
+      <div style="border-top:1px solid rgba(255,255,255,0.12);padding-top:24px">
+        <div style="font-size:13px;letter-spacing:0.14em;color:#7D8A9B;margin-bottom:12px">超過千萬補助金・指標性計畫肯定</div>
+        <div style="display:flex;flex-wrap:wrap;gap:12px 28px;font-size:15px;font-weight:700;color:#DCE2EA">
+          <span>高雄市 SBIR</span><span style="color:#C9A24B">｜</span>
+          <span>國發基金 1,500 萬</span><span style="color:#C9A24B">｜</span>
+          <span>科技部 TEIC</span><span style="color:#C9A24B">｜</span>
+          <span>台北市品牌補助</span>
+        </div>
+      </div>
+    </div>
+    <div style="align-self:end;display:flex;justify-content:center">
+      <img src="assets/arthur.jpg" alt="亞瑟教練 Arthur Wu" style="display:block;width:100%;max-width:400px;height:auto;border-radius:12px 12px 0 0;box-shadow:0 -8px 60px rgba(201,162,75,0.18)">
+    </div>
+  </div>
+</header>
+
+<!-- STATS -->
+<section style="background:#fff;border-bottom:1px solid #E7E1D4">
+  <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#E7E1D4">
+    <div style="background:#fff;padding:40px 24px;text-align:center">
+      <div style="font-family:'Noto Serif TC',serif;font-size:40px;font-weight:900;color:#0B1D33">500 萬+</div>
+      <div style="font-size:15px;color:#5C6675;margin-top:8px">親自取得政府補助</div>
+    </div>
+    <div style="background:#fff;padding:40px 24px;text-align:center">
+      <div style="font-family:'Noto Serif TC',serif;font-size:40px;font-weight:900;color:#0B1D33">1,000 萬+</div>
+      <div style="font-size:15px;color:#5C6675;margin-top:8px">輔導學員累計通過補助</div>
+    </div>
+    <div style="background:#fff;padding:40px 24px;text-align:center">
+      <div style="font-family:'Noto Serif TC',serif;font-size:40px;font-weight:900;color:#0B1D33">5 項</div>
+      <div style="font-size:15px;color:#5C6675;margin-top:8px">指標性補助與投資案</div>
+    </div>
+    <div style="background:#fff;padding:40px 24px;text-align:center">
+      <div style="font-family:'Noto Serif TC',serif;font-size:40px;font-weight:900;color:#0B1D33">20 年+</div>
+      <div style="font-size:15px;color:#5C6675;margin-top:8px">科技與商業產業經驗</div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section style="padding:96px 48px;background:#F8F6F1">
+  <div style="max-width:1200px;margin:0 auto">
+    <div style="text-align:center;margin-bottom:56px">
+      <div style="font-size:14px;letter-spacing:0.2em;color:#B8913D;font-weight:700;margin-bottom:12px">SERVICES</div>
+      <h2 style="font-family:'Noto Serif TC',serif;font-size:40px;font-weight:900;margin:0 0 16px;color:#0B1D33">三種方式，讓政府資源成為你的助力</h2>
+      <p style="font-size:17px;color:#5C6675;margin:0">從免費直播到 1:1 深度輔導，依你的階段選擇最適合的起點。</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px">
+      <div style="background:#0B1D33;color:#fff;border-radius:12px;padding:40px 32px;display:flex;flex-direction:column;gap:16px">
+        <div style="font-size:13px;letter-spacing:0.16em;color:#C9A24B;font-weight:700">免費・入門</div>
+        <h3 style="font-family:'Noto Serif TC',serif;font-size:24px;font-weight:900;margin:0">90 分鐘免費直播課</h3>
+        <p style="font-size:15px;line-height:1.9;color:#B9C2CE;margin:0;flex:1">首次公開成功拿下 5 項補助案的具體流程，拆解評審委員的評分邏輯，帶你設計高通過率計畫書。</p>
+        <a href="sign-up.html" style="color:#C9A24B;font-weight:900;font-size:15px">搶免費席位 →</a>
+      </div>
+      <div style="background:#fff;border:1px solid #E7E1D4;border-radius:12px;padding:40px 32px;display:flex;flex-direction:column;gap:16px">
+        <div style="font-size:13px;letter-spacing:0.16em;color:#B8913D;font-weight:700">系統化・實戰</div>
+        <h3 style="font-family:'Noto Serif TC',serif;font-size:24px;font-weight:900;margin:0;color:#0B1D33">補助申請實戰課程</h3>
+        <p style="font-size:15px;line-height:1.9;color:#5C6675;margin:0;flex:1">申請心法＋申請流程＋評審話術三大關鍵，搭配 AI 寫手工具與計畫書黃金架構，最快 30 天送件。</p>
+        <a href="services.html" style="color:#B8913D;font-weight:900;font-size:15px">了解課程 →</a>
+      </div>
+      <div style="background:#fff;border:1px solid #E7E1D4;border-radius:12px;padding:40px 32px;display:flex;flex-direction:column;gap:16px">
+        <div style="font-size:13px;letter-spacing:0.16em;color:#B8913D;font-weight:700">客製化・深度</div>
+        <h3 style="font-family:'Noto Serif TC',serif;font-size:24px;font-weight:900;margin:0;color:#0B1D33">1:1 企業教練輔導</h3>
+        <p style="font-size:15px;line-height:1.9;color:#5C6675;margin:0;flex:1">從補助案選題、計畫書撰寫到簡報答辯，陪你走完整個申請流程。已幫助超過 10 位學員成功取得補助或投資。</p>
+        <a href="booking.html" style="color:#B8913D;font-weight:900;font-size:15px">預約諮詢 →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- METHOD -->
+<section style="padding:96px 48px;background:#fff">
+  <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:0.9fr 1.1fr;gap:72px;align-items:center">
+    <div>
+      <div style="font-size:14px;letter-spacing:0.2em;color:#B8913D;font-weight:700;margin-bottom:12px">METHOD</div>
+      <h2 style="font-family:'Noto Serif TC',serif;font-size:38px;font-weight:900;line-height:1.4;margin:0 0 20px;color:#0B1D33">80% 的人被刷掉，不是因為不夠格</h2>
+      <p style="font-size:17px;line-height:2;color:#5C6675;margin:0 0 32px">而是沒有人教你評審的「潛規則」。成功的補助申請，靠的不是一份普通的計畫書，而是一套簡單、可複製、通過率高的申請流程。</p>
+      <a href="services.html" style="display:inline-block;background:#0B1D33;color:#fff;font-size:16px;font-weight:700;padding:14px 28px;border-radius:8px" style-hover="background:#122B4A">看完整方法論 →</a>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:20px">
+      <div style="display:flex;gap:24px;background:#F8F6F1;border-radius:12px;padding:28px 32px;align-items:flex-start">
+        <div style="font-family:'Noto Serif TC',serif;font-size:32px;font-weight:900;color:#C9A24B;line-height:1">01</div>
+        <div>
+          <h3 style="font-size:19px;font-weight:900;margin:0 0 8px;color:#0B1D33">申請心法</h3>
+          <p style="font-size:15px;line-height:1.8;color:#5C6675;margin:0">找到「低門檻、高成功率」、最適合你現有事業的補助案，避開難度高的計畫，省下大量時間。</p>
+        </div>
+      </div>
+      <div style="display:flex;gap:24px;background:#F8F6F1;border-radius:12px;padding:28px 32px;align-items:flex-start">
+        <div style="font-family:'Noto Serif TC',serif;font-size:32px;font-weight:900;color:#C9A24B;line-height:1">02</div>
+        <div>
+          <h3 style="font-size:19px;font-weight:900;margin:0 0 8px;color:#0B1D33">申請流程</h3>
+          <p style="font-size:15px;line-height:1.8;color:#5C6675;margin:0">用計畫書「黃金架構」＋ AI 工具快速完成申請文件，不必花 7～10 萬請寫手，內容自己最熟。</p>
+        </div>
+      </div>
+      <div style="display:flex;gap:24px;background:#F8F6F1;border-radius:12px;padding:28px 32px;align-items:flex-start">
+        <div style="font-family:'Noto Serif TC',serif;font-size:32px;font-weight:900;color:#C9A24B;line-height:1">03</div>
+        <div>
+          <h3 style="font-size:19px;font-weight:900;margin:0 0 8px;color:#0B1D33">評審話術</h3>
+          <p style="font-size:15px;line-height:1.8;color:#5C6675;margin:0">掌握打動委員的「說服話術」，讓評審自己說服自己支持你的提案，提升 80% 以上過件率。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT TEASER -->
+<section style="padding:96px 48px;background:#0B1D33;color:#fff">
+  <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:0.8fr 1.2fr;gap:72px;align-items:center">
+    <div>
+      <img src="assets/arthur.jpg" alt="亞瑟教練 Arthur Wu" style="display:block;width:100%;border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,0.4)">
+    </div>
+    <div>
+      <div style="font-size:14px;letter-spacing:0.2em;color:#C9A24B;font-weight:700;margin-bottom:12px">ABOUT</div>
+      <h2 style="font-family:'Noto Serif TC',serif;font-size:38px;font-weight:900;line-height:1.4;margin:0 0 20px">「Google 查得到成績的講師」</h2>
+      <p style="font-size:17px;line-height:2;color:#B9C2CE;margin:0 0 28px">亞瑟教練（Arthur Wu），資策會數位轉型顧問。曾任趨勢科技台灣研發站負責人 15 年、Musically（現抖音）美歐區商業總經理，親自申請 5 項政府補助案，並輔導超過 10 位學員成功取得補助或國發基金投資。</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px 24px;font-size:15px;font-weight:500;color:#DCE2EA;margin-bottom:36px">
+        <div style="display:flex;gap:10px"><span style="color:#C9A24B;font-weight:900">✓</span><span>高雄市 SBIR「執行優秀廠商」</span></div>
+        <div style="display:flex;gap:10px"><span style="color:#C9A24B;font-weight:900">✓</span><span>國發基金 1,500 萬元募資</span></div>
+        <div style="display:flex;gap:10px"><span style="color:#C9A24B;font-weight:900">✓</span><span>科技部 TEIC 前進矽谷計畫</span></div>
+        <div style="display:flex;gap:10px"><span style="color:#C9A24B;font-weight:900">✓</span><span>桃園安東基地評審委員</span></div>
+      </div>
+      <a href="about.html" style="display:inline-block;border:1px solid #C9A24B;color:#C9A24B;font-size:16px;font-weight:700;padding:14px 28px;border-radius:8px" style-hover="background:#C9A24B;color:#071527">認識亞瑟教練 →</a>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS TEASER -->
+<section style="padding:96px 48px;background:#F8F6F1">
+  <div style="max-width:1200px;margin:0 auto">
+    <div style="text-align:center;margin-bottom:56px">
+      <div style="font-size:14px;letter-spacing:0.2em;color:#B8913D;font-weight:700;margin-bottom:12px">TESTIMONIALS</div>
+      <h2 style="font-family:'Noto Serif TC',serif;font-size:40px;font-weight:900;margin:0;color:#0B1D33">學員的過件成績，是最好的證明</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:48px">
+      <div style="background:#fff;border:1px solid #E7E1D4;border-radius:12px;padding:36px 32px;display:flex;flex-direction:column;gap:20px">
+        <div style="font-family:'Noto Serif TC',serif;font-size:40px;color:#C9A24B;line-height:0.5">“</div>
+        <p style="font-size:16px;line-height:1.9;color:#1C2635;margin:0;flex:1">原本以為補助只有大公司拿得到，照著教練的黃金架構改寫計畫書，第一次送件就通過 SBIR，拿到六位數補助。</p>
+        <div>
+          <div style="font-weight:900;font-size:15px;color:#0B1D33">陳先生</div>
+          <div style="font-size:13px;color:#8A93A1">餐飲新創・SBIR 過件</div>
+        </div>
+      </div>
+      <div style="background:#fff;border:1px solid #E7E1D4;border-radius:12px;padding:36px 32px;display:flex;flex-direction:column;gap:20px">
+        <div style="font-family:'Noto Serif TC',serif;font-size:40px;color:#C9A24B;line-height:0.5">“</div>
+        <p style="font-size:16px;line-height:1.9;color:#1C2635;margin:0;flex:1">最有價值的是評審話術。答辯當天委員問的問題，幾乎都在教練帶我們演練的範圍內，報告完當場就有把握。</p>
+        <div>
+          <div style="font-weight:900;font-size:15px;color:#0B1D33">林小姐</div>
+          <div style="font-size:13px;color:#8A93A1">電商品牌・台北市品牌補助過件</div>
+        </div>
+      </div>
+      <div style="background:#fff;border:1px solid #E7E1D4;border-radius:12px;padding:36px 32px;display:flex;flex-direction:column;gap:20px">
+        <div style="font-family:'Noto Serif TC',serif;font-size:40px;color:#C9A24B;line-height:0.5">“</div>
+        <p style="font-size:16px;line-height:1.9;color:#1C2635;margin:0;flex:1">省下了請寫手的十萬元，更重要的是整套流程學起來了，第二個補助案自己就能申請，這才是真正的投資報酬。</p>
+        <div>
+          <div style="font-weight:900;font-size:15px;color:#0B1D33">張先生</div>
+          <div style="font-size:13px;color:#8A93A1">製造業二代・地方型 SBIR 過件</div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center">
+      <a href="testimonials.html" style="font-size:16px;font-weight:900;color:#B8913D">看更多成功案例 →</a>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG TEASER -->
+<section style="padding:96px 48px;background:#fff">
+  <div style="max-width:1200px;margin:0 auto">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:48px">
+      <div>
+        <div style="font-size:14px;letter-spacing:0.2em;color:#B8913D;font-weight:700;margin-bottom:12px">BLOG</div>
+        <h2 style="font-family:'Noto Serif TC',serif;font-size:40px;font-weight:900;margin:0;color:#0B1D33">補助專欄</h2>
+      </div>
+      <a href="blog.html" style="font-size:16px;font-weight:900;color:#B8913D;padding-bottom:6px">所有文章 →</a>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px">
+      <a href="blog-choose-grant.html" style="background:#F8F6F1;border-radius:12px;overflow:hidden;display:flex;flex-direction:column;color:#1C2635" style-hover="box-shadow:0 12px 32px rgba(11,29,51,0.12);color:#1C2635">
+        <div style="height:160px;background:linear-gradient(135deg,#0B1D33,#1A3A5C);display:flex;align-items:center;justify-content:center">
+          <span style="font-family:'Noto Serif TC',serif;font-size:26px;font-weight:900;color:#C9A24B">入門指南</span>
+        </div>
+        <div style="padding:28px;display:flex;flex-direction:column;gap:12px">
+          <div style="font-size:13px;color:#8A93A1">2026/06/18・補助入門</div>
+          <h3 style="font-size:19px;font-weight:900;line-height:1.6;margin:0;color:#0B1D33">新手第一次申請政府補助，該從哪個計畫開始？</h3>
+          <p style="font-size:14px;line-height:1.8;color:#5C6675;margin:0">SBIR、SITI、品牌補助…計畫這麼多，用三個問題找出最適合你的低門檻高成功率選擇。</p>
+        </div>
+      </a>
+      <a href="blog-proposal-structure.html" style="background:#F8F6F1;border-radius:12px;overflow:hidden;display:flex;flex-direction:column;color:#1C2635" style-hover="box-shadow:0 12px 32px rgba(11,29,51,0.12);color:#1C2635">
+        <div style="height:160px;background:linear-gradient(135deg,#122B4A,#0B1D33);display:flex;align-items:center;justify-content:center">
+          <span style="font-family:'Noto Serif TC',serif;font-size:26px;font-weight:900;color:#C9A24B">計畫書</span>
+        </div>
+        <div style="padding:28px;display:flex;flex-direction:column;gap:12px">
+          <div style="font-size:13px;color:#8A93A1">2026/06/02・計畫書撰寫</div>
+          <h3 style="font-size:19px;font-weight:900;line-height:1.6;margin:0;color:#0B1D33">評審 10 分鐘看一份計畫書：黃金架構怎麼寫？</h3>
+          <p style="font-size:14px;line-height:1.8;color:#5C6675;margin:0">委員的時間有限，計畫書的前三頁決定生死。拆解高通過率計畫書的底層邏輯。</p>
+        </div>
+      </a>
+      <a href="blog-grant-vs-loan.html" style="background:#F8F6F1;border-radius:12px;overflow:hidden;display:flex;flex-direction:column;color:#1C2635" style-hover="box-shadow:0 12px 32px rgba(11,29,51,0.12);color:#1C2635">
+        <div style="height:160px;background:linear-gradient(135deg,#1A3A5C,#122B4A);display:flex;align-items:center;justify-content:center">
+          <span style="font-family:'Noto Serif TC',serif;font-size:26px;font-weight:900;color:#C9A24B">資金策略</span>
+        </div>
+        <div style="padding:28px;display:flex;flex-direction:column;gap:12px">
+          <div style="font-size:13px;color:#8A93A1">2026/05/20・資金策略</div>
+          <h3 style="font-size:19px;font-weight:900;line-height:1.6;margin:0;color:#0B1D33">補助、貸款、投資：哪種資金適合你現在的事業？</h3>
+          <p style="font-size:14px;line-height:1.8;color:#5C6675;margin:0">三種資金來源的成本、風險與適用階段比較，別為了免費的錢走錯路。</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section style="background:linear-gradient(160deg,#0B1D33,#071527);color:#fff;padding:96px 48px;text-align:center">
+  <div style="max-width:760px;margin:0 auto">
+    <h2 style="font-family:'Noto Serif TC',serif;font-size:44px;font-weight:900;line-height:1.4;margin:0 0 20px">
+      <span>準備好讓政府出資，</span><br>
+      <span style="color:#C9A24B">為你的事業加速了嗎？</span>
+    </h2>
+    <p style="font-size:17px;line-height:1.9;color:#B9C2CE;margin:0 0 40px">免費直播沒有重播、名額有限。90 分鐘，帶走一套完整的補助申請策略。</p>
+    <div style="display:flex;gap:16px;justify-content:center">
+      <a href="sign-up.html" style="background:#C9A24B;color:#071527;font-size:17px;font-weight:900;padding:16px 36px;border-radius:8px" style-hover="background:#D9B45E">報名免費直播課</a>
+      <a href="booking.html" style="border:1px solid rgba(255,255,255,0.35);color:#fff;font-size:17px;font-weight:700;padding:16px 36px;border-radius:8px" style-hover="border-color:#C9A24B;color:#C9A24B">預約 1:1 諮詢</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="background:#071527;color:#7D8A9B;padding:64px 48px 40px">
+  <div style="max-width:1200px;margin:0 auto">
+    <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:48px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,0.08)">
+      <div>
+        <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:16px">
+          <span style="font-family:'Noto Serif TC',serif;font-size:20px;font-weight:900;color:#fff">亞瑟教練</span>
+          <span style="font-size:11px;letter-spacing:0.18em;color:#C9A24B;font-weight:700">ARTHUR WU</span>
+        </div>
+        <p style="font-size:14px;line-height:1.9;margin:0;max-width:360px">政府補助申請實戰專家・企業商業變現與數位轉型顧問。幫助創業者與中小企業，用政府的資源加速事業成長。</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px;font-size:14px">
+        <div style="color:#DCE2EA;font-weight:700;margin-bottom:4px">網站導覽</div>
+        <a href="about.html" style="color:#7D8A9B" style-hover="color:#C9A24B">關於教練</a>
+        <a href="services.html" style="color:#7D8A9B" style-hover="color:#C9A24B">課程服務</a>
+        <a href="testimonials.html" style="color:#7D8A9B" style-hover="color:#C9A24B">學員見證</a>
+        <a href="blog.html" style="color:#7D8A9B" style-hover="color:#C9A24B">補助專欄</a>
+        <a href="faq.html" style="color:#7D8A9B" style-hover="color:#C9A24B">常見問題</a>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px;font-size:14px">
+        <div style="color:#DCE2EA;font-weight:700;margin-bottom:4px">開始行動</div>
+        <a href="sign-up.html" style="color:#C9A24B;font-weight:700">報名免費直播課</a>
+        <a href="booking.html" style="color:#7D8A9B" style-hover="color:#C9A24B">預約 1:1 諮詢</a>
+      </div>
+    </div>
+    <p style="font-size:12px;line-height:1.9;margin:32px 0 0;color:#4E5B6B">【免責聲明】我們不相信所謂的「輕鬆免費拿補助」。成功申請補助來自正確的方法、準備充分的計畫，以及清楚傳達價值給評審委員。依法律規定，我們無法也不會保證您透過我們的課程、資訊或策略，能夠獲得特定金額的補助；補助的成功與否，取決於您自身的行動、計畫完整度與執行力。本頁面內容不構成任何形式的補助核准保證或承諾。© 2026 亞瑟教練 Arthur Wu</p>
+  </div>
+</footer>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showPromoBar&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;頂部公告列&quot;}, &quot;liveDate&quot;: {&quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;7/24（五）晚上 8:00&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;頂部公告列&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      showPromoBar: this.props.showPromoBar ?? true,
+      liveDate: this.props.liveDate ?? "7/24（五）晚上 8:00",
+    };
+  }
+}
+</script>
+</body>
+</html>
