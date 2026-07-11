@@ -8,6 +8,11 @@ IMAGE_NAME="arther-web-site"
 CONTAINER_NAME="arther-web-site"
 PORT="8080"
 
+echo "==> 從 GHL 同步 blog 文章（僅已發布）"
+if ! node fetch-ghl-blog.mjs; then
+  echo "警告：GHL blog 同步失敗，沿用現有文章內容繼續部署"
+fi
+
 echo "==> Git commit & push"
 git add -A
 if git diff --cached --quiet; then

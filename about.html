@@ -9,22 +9,26 @@
 <x-dc>
 <helmet>
 <meta charset="utf-8">
-<title>關於亞瑟教練｜Arthur Wu</title>
+<title>關於亞瑟教練 Arthur Wu｜從紐交所到 CMU 講台的 20 年實戰</title>
+<meta name="description" content="趨勢科技研發總負責人、獵豹移動 NYSE 上市商業操盤、抖音美歐商業總負責人、CMU 講師、美國專利發明人 —— 認識亞瑟教練的完整故事。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@600;700;900&display=swap" rel="stylesheet">
 <style>
   body { margin: 0; background: #F8F6F1; font-family: 'Noto Sans TC', sans-serif; color: #1C2635; }
   a { color: #B8913D; text-decoration: none; }
   a:hover { color: #96742C; }
+  .tl-item { display: grid; grid-template-columns: 160px 1fr; gap: 32px; padding: 40px 0; border-top: 1px solid #E7E1D4; }
+  .tl-year { font-family: 'Noto Serif TC', serif; font-size: 26px; font-weight: 900; color: #96742C; line-height: 1.3; }
   @media (max-width: 900px) {
     nav { flex-wrap: wrap !important; height: auto !important; padding: 12px 16px !important; row-gap: 8px !important; }
     nav > div { flex-wrap: wrap !important; gap: 8px 14px !important; font-size: 13px !important; }
     section, header, footer, article { padding-left: 20px !important; padding-right: 20px !important; }
-    h1 { font-size: 32px !important; }
+    h1 { font-size: 34px !important; }
     h2 { font-size: 26px !important; }
     div[style*="grid-template-columns"], a[style*="grid-template-columns"] { grid-template-columns: 1fr !important; }
     div[style*="repeat(4"] { grid-template-columns: 1fr 1fr !important; }
-    div[style*="gap:16px"], div[style*="gap: 16px"] { flex-wrap: wrap !important; }
+    div[style*="repeat(3"] { grid-template-columns: 1fr !important; }
+    .tl-item { grid-template-columns: 1fr !important; gap: 12px !important; }
     .rwd-col { flex-direction: column !important; align-items: center !important; text-align: center !important; }
   }
 </style>
@@ -43,135 +47,150 @@
     <a href="blog.html" style="color:#E8E4DB" style-hover="color:#C9A24B">補助專欄</a>
     <a href="faq.html" style="color:#E8E4DB" style-hover="color:#C9A24B">常見問題</a>
     <a href="booking.html" style="color:#0B1D33;background:#fff;padding:10px 20px;border-radius:6px;font-weight:700" style-hover="background:#E8E4DB">預約諮詢</a>
-    <a href="sign-up.html" style="color:#071527;background:#C9A24B;padding:10px 20px;border-radius:6px;font-weight:900" style-hover="background:#D9B45E">報名免費直播</a>
+    <a href="index.html#signup" style="color:#071527;background:#C9A24B;padding:10px 20px;border-radius:6px;font-weight:900" style-hover="background:#D9B45E">🔥 報名說明會</a>
   </div>
 </nav>
 
-<!-- PAGE HERO -->
-<header style="background:linear-gradient(160deg,#0B1D33 0%,#071527 70%);color:#fff;padding:96px 48px">
-  <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.1fr 0.9fr;gap:72px;align-items:center">
-    <div>
+<!-- HERO -->
+<header style="background:linear-gradient(160deg,#0B1D33 0%,#071527 70%);color:#fff;padding:88px 48px">
+  <div class="rwd-col" style="max-width:1100px;margin:0 auto;display:flex;gap:56px;align-items:center">
+    <div style="flex:1">
       <div style="font-size:14px;letter-spacing:0.2em;color:#C9A24B;font-weight:700;margin-bottom:16px">ABOUT ARTHUR WU</div>
-      <h1 style="font-family:'Noto Serif TC',serif;font-size:48px;line-height:1.35;font-weight:900;margin:0 0 24px">
-        <span>嘿！我是亞瑟教練，</span><br>
-        <span style="color:#C9A24B">「Google 查得到成績的講師」</span>
-      </h1>
-      <p style="font-size:18px;line-height:2;color:#B9C2CE;margin:0 0 20px">不只是補助申請專家，更是企業商業變現與數位轉型顧問。過去我成功申請 5 項政府補助案，幫助企業與創業者拿下 6～7 位數補助資金，同時擁有超過 20 年的產業經驗。</p>
-      <p style="font-size:18px;line-height:2;color:#B9C2CE;margin:0">如果您想讓政府資源成為企業發展的助力，我將幫助您少走冤枉路，成功申請補助。</p>
+      <h1 style="font-family:'Noto Serif TC',serif;font-size:46px;line-height:1.4;font-weight:900;margin:0 0 24px">敲過紐交所的鐘，<br>站過 CMU 的講台，<br>現在，我幫你創業</h1>
+      <p style="font-size:17px;line-height:2;color:#B9C2CE;margin:0">吳俊達 Arthur Wu。20 年横跨美國、中國、香港、台灣的科技產業實戰——趨勢科技研發總負責人、獵豹移動（NYSE:CMCM）商業總負責人、抖音美國歐洲區商業總負責人、卡內基美隆大學講師。現在的身分只有一個：幫創業者成長的教練。</p>
     </div>
-    <div>
-      <img src="assets/arthur.jpg" alt="亞瑟教練 Arthur Wu" style="display:block;width:100%;max-width:420px;margin:0 auto;border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,0.45)">
+    <div style="flex:0.7">
+      <img src="assets/web/hk-summit-speaking.jpg" alt="亞瑟教練於2024港粵澳台青年企業家峰會演講" style="width:100%;border-radius:16px;display:block;box-shadow:0 24px 64px rgba(0,0,0,0.4)">
+      <div style="font-size:13px;color:#7D8A9B;margin-top:12px;text-align:center">2024 港粵澳台青年企業家峰會・受邀與談</div>
     </div>
   </div>
 </header>
 
-<!-- TRACK RECORD -->
+<!-- 現任 -->
+<section style="background:#fff;border-bottom:1px solid #E7E1D4;padding:48px">
+  <div style="max-width:1100px;margin:0 auto;display:flex;justify-content:center;gap:40px;flex-wrap:wrap;font-size:15px;font-weight:700;color:#0B1D33">
+    <span>🎯 國發基金合規天使投資人</span>
+    <span>🏢 檸檬樹科技・匯鼎科技 董事長</span>
+    <span>🎓 CMU / 台北科大 EMBA / 宜蘭大學 EMBA 講師</span>
+    <span>🏛️ 桃園安東青創基地 顧問暨評審委員</span>
+  </div>
+</section>
+
+<!-- TIMELINE -->
 <section style="padding:96px 48px;background:#F8F6F1">
-  <div style="max-width:1200px;margin:0 auto">
-    <div style="text-align:center;margin-bottom:56px">
-      <div style="font-size:14px;letter-spacing:0.2em;color:#B8913D;font-weight:700;margin-bottom:12px">TRACK RECORD</div>
-      <h2 style="font-family:'Noto Serif TC',serif;font-size:40px;font-weight:900;margin:0;color:#0B1D33">五大指標性補助與投資實績</h2>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:20px;max-width:960px;margin:0 auto">
-      <div style="background:#fff;border:1px solid #E7E1D4;border-radius:12px;padding:32px;display:flex;gap:20px;align-items:flex-start">
-        <span style="color:#C9A24B;font-size:22px;font-weight:900">✓</span>
-        <div>
-          <h3 style="font-size:19px;font-weight:900;margin:0 0 6px;color:#0B1D33">高雄市政府 SBIR 補助案</h3>
-          <p style="font-size:15px;color:#5C6675;margin:0;line-height:1.8">獲評「執行優秀廠商」</p>
-        </div>
-      </div>
-      <div style="background:#fff;border:1px solid #E7E1D4;border-radius:12px;padding:32px;display:flex;gap:20px;align-items:flex-start">
-        <span style="color:#C9A24B;font-size:22px;font-weight:900">✓</span>
-        <div>
-          <h3 style="font-size:19px;font-weight:900;margin:0 0 6px;color:#0B1D33">國發基金 1,500 萬元募資</h3>
-          <p style="font-size:15px;color:#5C6675;margin:0;line-height:1.8">助企業獲得成長資金</p>
-        </div>
-      </div>
-      <div style="background:#fff;border:1px solid #E7E1D4;border-radius:12px;padding:32px;display:flex;gap:20px;align-items:flex-start">
-        <span style="color:#C9A24B;font-size:22px;font-weight:900">✓</span>
-        <div>
-          <h3 style="font-size:19px;font-weight:900;margin:0 0 6px;color:#0B1D33">科技部 TEIC 前進矽谷計畫</h3>
-          <p style="font-size:15px;color:#5C6675;margin:0;line-height:1.8">進軍國際市場</p>
-        </div>
-      </div>
-      <div style="background:#fff;border:1px solid #E7E1D4;border-radius:12px;padding:32px;display:flex;gap:20px;align-items:flex-start">
-        <span style="color:#C9A24B;font-size:22px;font-weight:900">✓</span>
-        <div>
-          <h3 style="font-size:19px;font-weight:900;margin:0 0 6px;color:#0B1D33">台北市產發局品牌補助</h3>
-          <p style="font-size:15px;color:#5C6675;margin:0;line-height:1.8">助企業打造品牌價值</p>
-        </div>
-      </div>
-      <div style="background:#0B1D33;border-radius:12px;padding:32px;display:flex;gap:20px;align-items:flex-start;grid-column:1 / -1">
-        <span style="color:#C9A24B;font-size:22px;font-weight:900">✓</span>
-        <div>
-          <h3 style="font-size:19px;font-weight:900;margin:0 0 6px;color:#fff">桃園安東基地評審委員</h3>
-          <p style="font-size:15px;color:#B9C2CE;margin:0;line-height:1.8">參與政府補助評審，掌握申請關鍵——我不只坐在申請者這一側，也坐過評審那一側。</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CAREER -->
-<section style="padding:96px 48px;background:#fff">
-  <div style="max-width:1000px;margin:0 auto">
+  <div style="max-width:900px;margin:0 auto">
     <div style="text-align:center;margin-bottom:64px">
-      <div style="font-size:14px;letter-spacing:0.2em;color:#B8913D;font-weight:700;margin-bottom:12px">EXPERIENCE</div>
-      <h2 style="font-family:'Noto Serif TC',serif;font-size:40px;font-weight:900;margin:0 0 16px;color:#0B1D33">我為什麼能教你？</h2>
-      <p style="font-size:17px;color:#5C6675;margin:0">政府補助＋企業經營雙料背景，20 年橫跨科技、商業變現與創業募資。</p>
+      <div style="font-size:14px;letter-spacing:0.2em;color:#96742C;font-weight:700;margin-bottom:12px">THE 20-YEAR JOURNEY</div>
+      <h2 style="font-family:'Noto Serif TC',serif;font-size:40px;font-weight:900;color:#0B1D33;line-height:1.4;margin:0 0 16px">二十年，四個城市，一個信念</h2>
+      <p style="font-size:16px;line-height:2;color:#5C6675;max-width:640px;margin:0 auto">每一段經歷都不是頭銜，是後來能幫你創業的養分。</p>
     </div>
-    <div style="display:flex;flex-direction:column;gap:0">
-      <div style="display:grid;grid-template-columns:200px 1fr;gap:32px;padding:32px 0;border-top:1px solid #E7E1D4">
-        <div style="font-family:'Noto Serif TC',serif;font-size:18px;font-weight:900;color:#C9A24B">現任</div>
-        <div>
-          <h3 style="font-size:20px;font-weight:900;margin:0 0 8px;color:#0B1D33">資策會數位轉型顧問</h3>
-          <p style="font-size:15px;line-height:1.9;color:#5C6675;margin:0">深諳政府補助機制與審查邏輯，站在制度內看申請這件事。</p>
+
+    <div class="tl-item" style="border-top:none">
+      <div class="tl-year">2000s<br><span style="font-size:14px;color:#8A93A1;font-weight:400">台北</span></div>
+      <div>
+        <h3 style="font-family:'Noto Serif TC',serif;font-size:24px;font-weight:900;color:#0B1D33;margin:0 0 12px">趨勢科技・研發總負責人</h3>
+        <p style="font-size:16px;line-height:2;color:#5C6675;margin:0 0 16px">在台灣最國際化的軟體公司做了 15 年資安研發，一路做到研發總負責人。期間取得<strong style="color:#0B1D33">美國專利 US 8,443,440</strong>——虛擬機入侵偵測與防禦系統的發明人。工程師的邏輯訓練，成了後來看商業模式的底層能力。</p>
+        <div style="display:inline-block;background:#fff;border:1px solid #E7E1D4;border-radius:8px;padding:12px 20px;font-size:14px;color:#5C6675">📜 US Patent 8,443,440・Trend Micro・2013 年核准</div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-year">2013<br><span style="font-size:14px;color:#8A93A1;font-weight:400">北京</span></div>
+      <div>
+        <h3 style="font-family:'Noto Serif TC',serif;font-size:24px;font-weight:900;color:#0B1D33;margin:0 0 12px">獵豹移動・商業總負責人</h3>
+        <p style="font-size:16px;line-height:2;color:#5C6675;margin:0 0 16px">「在資安領域工作 15 年了，該換個工作吧！」獵豹執行長傅盛親自找上門，41 歲的他離開舒適圈北上。帶隊操盤 Clean Master（全球一億下載、月活 6 億用戶）的商業化，寫下<strong style="color:#0B1D33">行動營收連續 11 季翻倍</strong>的紀錄——這段故事被工商時報以「職場達人」專題報導。</p>
+        <img src="assets/web/clean-master-100m.jpg" alt="Clean Master 一億下載慶功" style="width:100%;border-radius:12px;display:block">
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-year">2014<br><span style="font-size:14px;color:#8A93A1;font-weight:400">紐約</span></div>
+      <div>
+        <h3 style="font-family:'Noto Serif TC',serif;font-size:24px;font-weight:900;color:#0B1D33;margin:0 0 12px">紐約證交所・敲鐘那一天</h3>
+        <p style="font-size:16px;line-height:2;color:#5C6675;margin:0 0 16px">2014 年 5 月 8 日，獵豹移動（NYSE:CMCM）在紐約證交所掛牌上市。作為商業核心成員站上敲鐘台，與時任董事長雷軍（小米創辦人）並肩合影。華爾街的那面獵豹橘，是台灣工程師用十年拼出來的。</p>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px">
+          <img src="assets/web/nyse-ipo.jpg" alt="NYSE 敲鐘儀式" style="width:100%;height:160px;object-fit:cover;border-radius:12px;display:block">
+          <img src="assets/web/nyse-leijun.jpg" alt="與時任獵豹董事長雷軍合影" style="width:100%;height:160px;object-fit:cover;object-position:top;border-radius:12px;display:block">
+          <img src="assets/web/nyse-building.jpg" alt="紐約證交所外的獵豹移動旗幟" style="width:100%;height:160px;object-fit:cover;border-radius:12px;display:block">
+        </div>
+        <div style="font-size:13px;color:#8A93A1;margin-top:8px">左起：NYSE 敲鐘儀式・與時任獵豹董事長雷軍・紐交所外的 Cheetah Mobile 旗幟</div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-year">2016<br><span style="font-size:14px;color:#8A93A1;font-weight:400">矽谷</span></div>
+      <div>
+        <h3 style="font-family:'Noto Serif TC',serif;font-size:24px;font-weight:900;color:#0B1D33;margin:0 0 12px">卡內基美隆大學（CMU）・兼任講師</h3>
+        <p style="font-size:16px;line-height:2;color:#5C6675;margin:0 0 16px">受聘於 CMU 矽谷校區資訊網路研究院（INI），開設「14-844: Mobile Advertising」課程。CMU 是全球 AI 研究重鎮——能站上這個講台的，是被驗證過的實戰。美通社（PR Newswire）官方新聞稿見證了這段產學合作。</p>
+        <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:12px">
+          <img src="assets/web/cmu-class.jpg" alt="CMU 校園與學生合影" style="width:100%;height:200px;object-fit:cover;border-radius:12px;display:block">
+          <img src="assets/web/cmu-teaching-1.jpg" alt="CMU 授課現場" style="width:100%;height:200px;object-fit:cover;border-radius:12px;display:block">
         </div>
       </div>
-      <div style="display:grid;grid-template-columns:200px 1fr;gap:32px;padding:32px 0;border-top:1px solid #E7E1D4">
-        <div style="font-family:'Noto Serif TC',serif;font-size:18px;font-weight:900;color:#C9A24B">15 年</div>
-        <div>
-          <h3 style="font-size:20px;font-weight:900;margin:0 0 8px;color:#0B1D33">趨勢科技 台灣研發站負責人</h3>
-          <p style="font-size:15px;line-height:1.9;color:#5C6675;margin:0">科技產業資深領導者，掌握創新與科技類補助案的技術語言。</p>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-year">2017<br><span style="font-size:14px;color:#8A93A1;font-weight:400">美國・歐洲</span></div>
+      <div>
+        <h3 style="font-family:'Noto Serif TC',serif;font-size:24px;font-weight:900;color:#0B1D33;margin:0 0 12px">抖音・美國歐洲區商業總負責人</h3>
+        <p style="font-size:16px;line-height:2;color:#5C6675;margin:0 0 16px">在短影音改變世界之前，就在最前線操盤。DIGIDAY 專訪中，他以 Musical.ly（TikTok 前身）商業化操盤者的身分，談網紅行銷的三贏策略。全球流量的玩法，他不是讀來的，是做出來的。</p>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-year">2019<br><span style="font-size:14px;color:#8A93A1;font-weight:400">台灣</span></div>
+      <div>
+        <h3 style="font-family:'Noto Serif TC',serif;font-size:24px;font-weight:900;color:#0B1D33;margin:0 0 12px">回台創業・把補助案自己走一遍</h3>
+        <p style="font-size:16px;line-height:2;color:#5C6675;margin:0 0 16px">回到台灣連續創業：網紅媒合平台 MATCH（檸檬樹科技）、共享衣櫥 AMAZE（三立專訪）、美商 LUCID 台灣站。過程中親自申請、親自過案——<strong style="color:#0B1D33">高雄市 SBIR（獲績優廠商頒獎）、台北市品牌補助 300 萬、科技部 TIEC 前進矽谷計畫、美國 SOSV 加速器投資</strong>。也是嬰兒科技獨角獸 CUBO AI 的創始股東。</p>
+        <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:12px">
+          <img src="assets/web/sbir-award.jpg" alt="高雄市 SBIR 績優廠商頒獎典禮" style="width:100%;height:200px;object-fit:cover;border-radius:12px;display:block">
+          <img src="assets/web/media-kol-magazine.jpg" alt="政府刊物專訪：檸檬樹科技 MATCH 平台" style="width:100%;height:200px;object-fit:cover;object-position:left;border-radius:12px;display:block">
         </div>
       </div>
-      <div style="display:grid;grid-template-columns:200px 1fr;gap:32px;padding:32px 0;border-top:1px solid #E7E1D4">
-        <div style="font-family:'Noto Serif TC',serif;font-size:18px;font-weight:900;color:#C9A24B">3 年</div>
-        <div>
-          <h3 style="font-size:20px;font-weight:900;margin:0 0 8px;color:#0B1D33">Musically（現抖音）美歐區商業總經理</h3>
-          <p style="font-size:15px;line-height:1.9;color:#5C6675;margin:0">全球商業變現高手；另曾任獵豹移動商業變現資深總監 6 年，成功幫助企業取得資金並拓展市場。</p>
-        </div>
-      </div>
-      <div style="display:grid;grid-template-columns:200px 1fr;gap:32px;padding:32px 0;border-top:1px solid #E7E1D4">
-        <div style="font-family:'Noto Serif TC',serif;font-size:18px;font-weight:900;color:#C9A24B">創業</div>
-        <div>
-          <h3 style="font-size:20px;font-weight:900;margin:0 0 8px;color:#0B1D33">MATCH 網紅媒合平台・共享衣櫥平台 創辦人</h3>
-          <p style="font-size:15px;line-height:1.9;color:#5C6675;margin:0">2014 年創業登上紐交所；親身走過募資、補助申請與新創經營的每一關。</p>
-        </div>
-      </div>
-      <div style="display:grid;grid-template-columns:200px 1fr;gap:32px;padding:32px 0;border-top:1px solid #E7E1D4;border-bottom:1px solid #E7E1D4">
-        <div style="font-family:'Noto Serif TC',serif;font-size:18px;font-weight:900;color:#C9A24B">授課</div>
-        <div>
-          <h3 style="font-size:20px;font-weight:900;margin:0 0 8px;color:#0B1D33">美國卡內基美隆大學・北科大資訊財經碩士班</h3>
-          <p style="font-size:15px;line-height:1.9;color:#5C6675;margin:0">受邀教授移動廣告變現；並舉辦多場演講、工作坊與讀書會。</p>
-        </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-year">現在<br><span style="font-size:14px;color:#8A93A1;font-weight:400">台灣→世界</span></div>
+      <div>
+        <h3 style="font-family:'Noto Serif TC',serif;font-size:24px;font-weight:900;color:#0B1D33;margin:0 0 12px">亞瑟教練・幫創業者長出一人公司</h3>
+        <p style="font-size:16px;line-height:2;color:#5C6675;margin:0 0 16px">經濟部指導、中小企業信用保證基金主辦的全國巡迴講座，邀請他主講「政府補助案 AI 實戰撰寫」；台北科大 EMBA、宜蘭大學 EMBA 客座講師；桃園安東青創基地顧問暨評審委員（政府聘書）；2024 港粵澳台青年企業家峰會與談人。250+ 家企業跟他學申請補助，累計過案超過 5,000 萬。他把 20 年的路，鋪成你的捷徑：<strong style="color:#0B1D33">政府補助案課程與過案心法、行銷自動化課程、AI 代理人系統</strong>——讓一個人，也能是一家公司。</p>
+        <img src="assets/web/hk-summit-panel.jpg" alt="2024 港粵澳台青年企業家峰會與談" style="width:100%;border-radius:12px;display:block">
       </div>
     </div>
   </div>
 </section>
 
-<!-- COACHING -->
-<section style="padding:96px 48px;background:#0B1D33;color:#fff">
+<!-- 為什麼教學 -->
+<section style="background:linear-gradient(160deg,#0B1D33,#071527);color:#fff;padding:96px 48px">
   <div style="max-width:860px;margin:0 auto;text-align:center">
-    <h2 style="font-family:'Noto Serif TC',serif;font-size:38px;font-weight:900;line-height:1.5;margin:0 0 24px">
-      <span>除了親自操刀補助申請，</span><br>
-      <span style="color:#C9A24B">我更擅長把方法交到你手上</span>
-    </h2>
-    <p style="font-size:17px;line-height:2;color:#B9C2CE;margin:0 0 40px">擔任多家企業的企業教練，運用系統化方法，成功幫助超過 10 位學員取得政府補助或國發基金投資，讓企業獲得強力資源支持，加速成長。</p>
-    <div style="display:flex;gap:16px;justify-content:center">
-      <a href="sign-up.html" style="background:#C9A24B;color:#071527;font-size:17px;font-weight:900;padding:16px 36px;border-radius:8px" style-hover="background:#D9B45E">從免費直播課開始</a>
-      <a href="booking.html" style="border:1px solid rgba(255,255,255,0.35);color:#fff;font-size:17px;font-weight:700;padding:16px 36px;border-radius:8px" style-hover="border-color:#C9A24B;color:#C9A24B">預約 1:1 諮詢</a>
+    <div style="font-size:14px;letter-spacing:0.2em;color:#C9A24B;font-weight:700;margin-bottom:16px">WHY I TEACH</div>
+    <h2 style="font-family:'Noto Serif TC',serif;font-size:36px;font-weight:900;line-height:1.5;margin:0 0 24px">「我拿過大公司的資源，<br>也吃過小公司的苦。」</h2>
+    <p style="font-size:17px;line-height:2.2;color:#B9C2CE;margin:0;text-align:left">在獵豹和抖音，我看過幾億用戶的系統怎麼運轉；回台灣創業，我也體會過一個人當十個人用的日子。這兩種經驗加起來，我很確定一件事：<strong style="color:#fff">台灣創業者不缺能力，缺的是資源跟系統。</strong>政府每年有上百億的補助預算，AI 工具已經可以取代整個部門的產能——會用的人，一個人就是一家公司；不會用的人，繼續用時間換錢。我教的，就是「會用」這件事。</p>
+  </div>
+</section>
+
+<!-- 興趣 -->
+<section style="padding:96px 48px;background:#F8F6F1">
+  <div style="max-width:1100px;margin:0 auto">
+    <div style="text-align:center;margin-bottom:56px">
+      <div style="font-size:14px;letter-spacing:0.2em;color:#96742C;font-weight:700;margin-bottom:12px">OFF THE CLOCK</div>
+      <h2 style="font-family:'Noto Serif TC',serif;font-size:38px;font-weight:900;color:#0B1D33;line-height:1.4;margin:0 0 16px">下了講台，他在海上</h2>
+      <p style="font-size:16px;line-height:2;color:#5C6675;max-width:680px;margin:0 auto">2022 年開始追新的夢：考取遊艇與動力小船駕照、完成 ASA101 帆船課程、成為亞果遊艇會首席會員。不開船的日子，就在網球場上。創業像航海——看得懂風向的人，才能把船開到別人到不了的地方。</p>
     </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px">
+      <img src="assets/web/sailing-helm.jpg" alt="亞瑟教練掌舵帆船" style="width:100%;height:300px;object-fit:cover;border-radius:12px;display:block">
+      <img src="assets/web/sailing-crew.jpg" alt="海上航行" style="width:100%;height:300px;object-fit:cover;border-radius:12px;display:block">
+      <img src="assets/web/marina-night.jpg" alt="遊艇碼頭夜色" style="width:100%;height:300px;object-fit:cover;border-radius:12px;display:block">
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="background:#fff;padding:96px 48px;text-align:center;border-top:1px solid #E7E1D4">
+  <div style="max-width:720px;margin:0 auto">
+    <h2 style="font-family:'Noto Serif TC',serif;font-size:36px;font-weight:900;color:#0B1D33;line-height:1.5;margin:0 0 20px">20 年的路，鋪成你的捷徑</h2>
+    <p style="font-size:16px;line-height:2;color:#5C6675;margin:0 0 36px">90 分鐘免費說明會，聽他怎麼用政府的錢、自動化的流程、AI 的人力，幫你打造一人公司。</p>
+    <a href="index.html#signup" style="display:inline-block;background:#C9A24B;color:#071527;font-size:18px;font-weight:900;padding:18px 44px;border-radius:8px" style-hover="background:#D9B45E">立即報名免費說明會 →</a>
   </div>
 </section>
 
@@ -184,7 +203,7 @@
           <span style="font-family:'Noto Serif TC',serif;font-size:20px;font-weight:900;color:#fff">亞瑟教練</span>
           <span style="font-size:11px;letter-spacing:0.18em;color:#C9A24B;font-weight:700">ARTHUR WU</span>
         </div>
-        <p style="font-size:14px;line-height:1.9;margin:0;max-width:360px">政府補助申請實戰專家・企業商業變現與數位轉型顧問。幫助創業者與中小企業，用政府的資源加速事業成長。</p>
+        <p style="font-size:14px;line-height:1.9;margin:0;max-width:360px">政府補助案實戰專家・AI 自動化教練。用政府的錢、自動化的流程、AI 的人力，幫創業者打造一人公司。</p>
       </div>
       <div style="display:flex;flex-direction:column;gap:12px;font-size:14px">
         <div style="color:#DCE2EA;font-weight:700;margin-bottom:4px">網站導覽</div>
@@ -196,7 +215,7 @@
       </div>
       <div style="display:flex;flex-direction:column;gap:12px;font-size:14px">
         <div style="color:#DCE2EA;font-weight:700;margin-bottom:4px">開始行動</div>
-        <a href="sign-up.html" style="color:#C9A24B;font-weight:700">報名免費直播課</a>
+        <a href="index.html#signup" style="color:#C9A24B;font-weight:700">🔥 報名免費說明會</a>
         <a href="booking.html" style="color:#7D8A9B" style-hover="color:#C9A24B">預約 1:1 諮詢</a>
       </div>
     </div>

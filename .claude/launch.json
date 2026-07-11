@@ -6,6 +6,12 @@
       "runtimeExecutable": "npx",
       "runtimeArgs": ["--yes", "serve", "-l", "8000", "."],
       "port": 8000
+    },
+    {
+      "name": "idealflow",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["--yes", "serve", "-l", "8931", "/Users/arther/Documents/Claude/Projects/idealflow website"],
+      "port": 8931
     }
   ]
 }
