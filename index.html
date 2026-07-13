@@ -28,7 +28,23 @@
     div[style*="repeat(3"] { grid-template-columns: 1fr !important; }
     div[style*="gap:16px"], div[style*="gap: 16px"] { flex-wrap: wrap !important; }
     .rwd-col { flex-direction: column !important; align-items: center !important; text-align: center !important; }
+    header .rwd-col > div:last-child { align-self: center !important; }
+    header img[alt="亞瑟教練 Arthur Wu"] { max-height: 300px !important; border-radius: 16px !important; object-position: top !important; }
+    header h1 { font-size: 40px !important; }
+    header p[style*="font-size:22px"] { font-size: 19px !important; }
+    body { padding-bottom: 76px !important; }
+    #mobile-cta { display: flex !important; }
   }
+  #mobile-cta { display: none; position: fixed; left: 0; right: 0; bottom: 0; z-index: 90; background: #071527; border-top: 1px solid rgba(201,162,75,0.4); padding: 10px 14px; box-shadow: 0 -6px 24px rgba(0,0,0,0.35); gap: 10px; align-items: center; }
+  #mobile-cta a { flex: 1; text-align: center; background: #C9A24B; color: #071527; font-size: 16px; font-weight: 900; padding: 14px 12px; border-radius: 8px; }
+  /* SIGNUP POPUP */
+  #signup-pop { display: none; position: fixed; inset: 0; z-index: 1000; background: rgba(7,21,39,0.72); backdrop-filter: blur(3px); align-items: center; justify-content: center; padding: 20px; }
+  #signup-pop.show { display: flex; }
+  #signup-pop .box { position: relative; background: linear-gradient(165deg,#0B1D33,#071527); color: #fff; max-width: 460px; width: 100%; border-radius: 18px; border: 1px solid rgba(201,162,75,0.45); padding: 40px 32px 32px; box-shadow: 0 30px 80px rgba(0,0,0,0.6); text-align: center; }
+  #signup-pop .x { position: absolute; top: 14px; right: 16px; background: transparent; border: none; color: #7D8A9B; font-size: 26px; line-height: 1; cursor: pointer; }
+  #signup-pop .x:hover { color: #fff; }
+  #signup-pop .cta { display: block; background: #C9A24B; color: #071527; font-size: 18px; font-weight: 900; padding: 16px; border-radius: 10px; margin-top: 22px; box-shadow: 0 10px 28px rgba(201,162,75,0.35); }
+  #signup-pop .cta:hover { background: #D9B45E; }
 </style>
 </helmet>
 
@@ -58,17 +74,17 @@
 <!-- HERO -->
 <header style="background:linear-gradient(160deg,#0B1D33 0%,#071527 70%);color:#fff;padding:0 48px">
   <div class="rwd-col" style="max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:48px">
-    <div style="flex:1.15;padding:72px 0">
-      <div style="display:inline-block;border:1px solid #C9A24B;color:#C9A24B;font-size:13px;font-weight:700;letter-spacing:0.12em;padding:8px 16px;border-radius:100px;margin-bottom:24px">政府補助案實戰 × AI 自動化</div>
-      <h1 style="font-family:'Noto Serif TC',serif;font-size:52px;line-height:1.3;font-weight:900;margin:0 0 24px">一個人，<br>也能是一家公司</h1>
-      <p style="font-size:17px;line-height:2;color:#B9C2CE;margin:0 0 16px">我是亞瑟教練。從<strong style="color:#E8E4DB">紐約證交所敲鐘上市</strong>、<strong style="color:#E8E4DB">卡內基美隆大學（CMU）講台</strong>，到<strong style="color:#E8E4DB">抖音與獵豹移動的全球商業操盤</strong>——20 年國際實戰，我看過最強的團隊怎麼運作。</p>
-      <p style="font-size:17px;line-height:2;color:#B9C2CE;margin:0 0 36px">現在，我幫台灣創業者用三套系統補齊資金、流程與人力：<strong style="color:#C9A24B">政府補助的錢、自動化的流程、AI 代理人的人力</strong>。</p>
-      <div style="display:flex;gap:16px;flex-wrap:wrap">
-        <a href="#signup" style="display:inline-block;background:#C9A24B;color:#071527;font-size:17px;font-weight:900;padding:16px 32px;border-radius:8px" style-hover="background:#D9B45E">報名免費說明會 →</a>
-        <a href="about.html" style="display:inline-block;border:1px solid rgba(255,255,255,0.35);color:#fff;font-size:17px;font-weight:700;padding:16px 32px;border-radius:8px" style-hover="border-color:#C9A24B;color:#C9A24B">認識亞瑟教練</a>
+    <div style="flex:1.15;padding:64px 0">
+      <div style="display:inline-block;background:rgba(201,162,75,0.15);border:1px solid #C9A24B;color:#C9A24B;font-size:13px;font-weight:900;letter-spacing:0.08em;padding:8px 16px;border-radius:100px;margin-bottom:22px">🔴 免費線上直播・名額有限</div>
+      <h1 style="font-family:'Noto Serif TC',serif;font-size:52px;line-height:1.25;font-weight:900;margin:0 0 20px">一個人，<br>也能是一家公司</h1>
+      <p style="font-size:22px;line-height:1.6;color:#fff;font-weight:700;margin:0 0 18px">30 天內學會用<span style="color:#C9A24B">政府的錢</span>＋<span style="color:#C9A24B">AI</span>，<br>拿下 <span style="color:#C9A24B">6～7 位數</span>補助、打造自動化事業。</p>
+      <p style="font-size:16px;line-height:1.9;color:#B9C2CE;margin:0 0 28px">我是亞瑟教練——<strong style="color:#E8E4DB">CMU 講師、NYSE 上市操盤手</strong>。親自拿下 5 項指標性補助，250+ 家企業跟我學會用政府資源加速事業。</p>
+      <div style="display:flex;gap:14px;flex-wrap:wrap;align-items:center">
+        <a href="#signup" style="display:inline-block;background:#C9A24B;color:#071527;font-size:18px;font-weight:900;padding:18px 36px;border-radius:8px;box-shadow:0 10px 28px rgba(201,162,75,0.35)" style-hover="background:#D9B45E">🔥 立即免費報名說明會 →</a>
+        <a href="about.html" style="display:inline-block;border:1px solid rgba(255,255,255,0.35);color:#fff;font-size:16px;font-weight:700;padding:18px 28px;border-radius:8px" style-hover="border-color:#C9A24B;color:#C9A24B">認識亞瑟教練</a>
       </div>
-      <div style="margin-top:44px;padding-top:28px;border-top:1px solid rgba(255,255,255,0.12)">
-        <div style="font-size:13px;color:#7D8A9B;margin-bottom:12px">實戰定錨・不是講理論的老師</div>
+      <div style="margin-top:20px;display:flex;align-items:center;gap:10px;background:rgba(255,255,255,0.06);border:1px dashed rgba(201,162,75,0.5);border-radius:10px;padding:12px 18px;font-size:14px;color:#E8E4DB;font-weight:700">🎁 報名即送：補助案 AI 寫手 30 天試用 ＋ 補助申請 SOP 電子書</div>
+      <div style="margin-top:28px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.12)">
         <div style="display:flex;gap:16px;flex-wrap:wrap;font-size:14px;font-weight:700;color:#DCE2EA">
           <span>🎓 CMU 卡內基美隆講師</span><span>🔔 NYSE 紐交所上市</span><span>🚀 前抖音美歐商業總負責人</span><span>📜 四項美國專利發明人</span>
         </div>
@@ -114,7 +130,6 @@
       <div style="background:#fff;border:1px solid #E7E1D4;border-radius:12px;overflow:hidden">
         <div style="position:relative">
           <img src="assets/web/cmu-offer-letter.jpg" alt="CMU 兼任講師聘書" style="width:100%;display:block">
-          <div style="position:absolute;top:22%;left:8%;width:42%;height:10%;background:#fff"></div>
           <div style="position:absolute;bottom:12px;right:12px;background:#C9A24B;color:#071527;font-size:12px;font-weight:900;padding:6px 12px;border-radius:6px">CMU 官方聘書 ✓</div>
         </div>
         <div style="padding:20px 24px;font-size:14px;line-height:1.8;color:#5C6675">2016 年 CMU 矽谷校區 INI 兼任講師聘書，課程編號 14-844：Mobile Advertising</div>
@@ -368,6 +383,53 @@
     <p style="font-size:12px;line-height:1.9;margin:32px 0 0;color:#4E5B6B">【免責聲明】我們不相信所謂的「輕鬆免費拿補助」。成功申請補助來自正確的方法、準備充分的計畫，以及清楚傳達價值給評審委員。依法律規定，我們無法也不會保證您透過我們的課程、資訊或策略，能夠獲得特定金額的補助；補助的成功與否，取決於您自身的行動、計畫完整度與執行力。本頁面內容不構成任何形式的補助核准保證或承諾。© 2026 亞瑟教練 Arthur Wu</p>
   </div>
 </footer>
+
+<!-- STICKY MOBILE CTA -->
+<div id="mobile-cta">
+  <a href="#signup">🔥 立即免費報名說明會 →</a>
+</div>
+
+<!-- SIGNUP POPUP (15s + exit-intent) -->
+<div id="signup-pop" role="dialog" aria-modal="true" aria-label="免費說明會報名">
+  <div class="box">
+    <button class="x" aria-label="關閉" onclick="closeSignupPop()">&times;</button>
+    <div style="font-size:13px;font-weight:900;letter-spacing:0.08em;color:#C9A24B;margin-bottom:12px">🔴 免費線上直播・名額有限</div>
+    <div style="font-family:'Noto Serif TC',serif;font-size:26px;font-weight:900;line-height:1.4;margin-bottom:14px">先別走！<br>90 分鐘學會拿<br><span style="color:#C9A24B">6～7 位數政府補助</span></div>
+    <p style="font-size:15px;line-height:1.8;color:#B9C2CE;margin:0">亞瑟教練親自拆解評審評分邏輯與計畫書黃金架構。<strong style="color:#E8E4DB">報名即送補助案 AI 寫手 30 天試用 ＋ SOP 電子書。</strong></p>
+    <a class="cta" href="#signup" onclick="closeSignupPop()">🔥 免費搶下我的名額 →</a>
+    <div style="font-size:12px;color:#7D8A9B;margin-top:14px">沒有重播・線上進行・完全免費</div>
+  </div>
+</div>
+
+<script>
+(function () {
+  var KEY = 'arther_signup_pop_shown';
+  var shown = false;
+  function openPop() {
+    if (shown) return;
+    try { if (sessionStorage.getItem(KEY)) return; } catch (e) {}
+    shown = true;
+    try { sessionStorage.setItem(KEY, '1'); } catch (e) {}
+    document.getElementById('signup-pop').classList.add('show');
+  }
+  window.closeSignupPop = function () {
+    document.getElementById('signup-pop').classList.remove('show');
+  };
+  // 停留超過 15 秒
+  setTimeout(openPop, 15000);
+  // 桌機：滑鼠移出視窗上緣（離開意圖）
+  document.addEventListener('mouseout', function (e) {
+    if (!e.relatedTarget && e.clientY <= 0) openPop();
+  });
+  // 點背景或按 ESC 關閉
+  document.getElementById('signup-pop').addEventListener('click', function (e) {
+    if (e.target === this) window.closeSignupPop();
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') window.closeSignupPop();
+  });
+})();
+</script>
 
 </x-dc>
 </body>
