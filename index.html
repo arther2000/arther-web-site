@@ -415,8 +415,8 @@
   window.closeSignupPop = function () {
     document.getElementById('signup-pop').classList.remove('show');
   };
-  // 停留超過 15 秒
-  setTimeout(openPop, 15000);
+  // 停留超過 45 秒（手機底部已有常駐報名條，不需太早打擾）
+  setTimeout(openPop, 45000);
   // 桌機：滑鼠移出視窗上緣（離開意圖）
   document.addEventListener('mouseout', function (e) {
     if (!e.relatedTarget && e.clientY <= 0) openPop();
