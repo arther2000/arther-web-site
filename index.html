@@ -392,11 +392,11 @@
 <!-- SIGNUP POPUP (15s + exit-intent) -->
 <div id="signup-pop" role="dialog" aria-modal="true" aria-label="免費說明會報名">
   <div class="box">
-    <button class="x" aria-label="關閉" onclick="closeSignupPop()">&times;</button>
+    <button class="x" id="signup-pop-x" aria-label="關閉">&times;</button>
     <div style="font-size:13px;font-weight:900;letter-spacing:0.08em;color:#C9A24B;margin-bottom:12px">🔴 免費線上直播・名額有限</div>
     <div style="font-family:'Noto Serif TC',serif;font-size:26px;font-weight:900;line-height:1.4;margin-bottom:14px">先別走！<br>90 分鐘學會拿<br><span style="color:#C9A24B">6～7 位數政府補助</span></div>
     <p style="font-size:15px;line-height:1.8;color:#B9C2CE;margin:0">亞瑟教練親自拆解評審評分邏輯與計畫書黃金架構。<strong style="color:#E8E4DB">報名即送補助案 AI 寫手 30 天試用 ＋ SOP 電子書。</strong></p>
-    <a class="cta" href="#signup" onclick="closeSignupPop()">🔥 免費搶下我的名額 →</a>
+    <a class="cta" id="signup-pop-cta" href="#signup">🔥 免費搶下我的名額 →</a>
     <div style="font-size:12px;color:#7D8A9B;margin-top:14px">沒有重播・線上進行・完全免費</div>
   </div>
 </div>
@@ -421,9 +421,17 @@
   document.addEventListener('mouseout', function (e) {
     if (!e.relatedTarget && e.clientY <= 0) openPop();
   });
-  // 點背景或按 ESC 關閉
-  document.getElementById('signup-pop').addEventListener('click', function (e) {
-    if (e.target === this) window.closeSignupPop();
+  // 事件委派綁在 document 上（support.js 會替換 x-dc 節點，故不直接綁元素）
+  document.addEventListener('click', function (e) {
+    var t = e.target;
+    if (t.closest && t.closest('#signup-pop-cta')) {
+      window.closeSignupPop();
+      var form = document.getElementById('signup');
+      if (form) setTimeout(function () { form.scrollIntoView({ behavior: 'smooth' }); }, 60);
+      return;
+    }
+    if (t.closest && t.closest('#signup-pop-x')) { window.closeSignupPop(); return; }
+    if (t.id === 'signup-pop') { window.closeSignupPop(); }  // 點背景關閉
   });
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') window.closeSignupPop();
