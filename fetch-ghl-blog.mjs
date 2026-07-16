@@ -15,6 +15,11 @@ const LOCATION_ID = 'rROh0DkvDTbUH3GYRGcQ';
 const BLOG_ID = 'XWT16HW0uLjXOeBXE6vG';
 const API = 'https://services.leadconnectorhq.com';
 const PAGE_PREFIX = 'ghl-post-';
+// 對外正版網域（headless 架構：GHL 只當資料中心，SEO 正版在這個站）。
+// 未來搬品牌網域時，只要改這一行，canonical / og / sitemap 全部跟著更新。
+const SITE_URL = 'https://arther.zeabur.app';
+const SITE_NAME = '亞瑟教練 Arthur Wu';
+const LOGO_URL = `${SITE_URL}/assets/arthur.jpg`;
 const INCLUDE_DRAFTS = process.argv.includes('--include-drafts');
 
 function loadToken() {
@@ -95,6 +100,35 @@ const cleanRawHTML = (html) =>
     }
   );
 
+// 對外正版網址（headless：SEO 權重集中在這裡）
+function canonicalUrl(p) {
+  return `${SITE_URL}/${PAGE_PREFIX}${p.urlSlug}.html`;
+}
+
+// BlogPosting 結構化資料，讓 Google 認得作者/日期/圖片/發布者
+function articleJsonLd(p) {
+  const url = canonicalUrl(p);
+  const data = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: p.title,
+    description: p.description,
+    image: p.imageUrl || LOGO_URL,
+    author: { '@type': 'Person', name: '亞瑟教練 Arthur Wu' },
+    publisher: {
+      '@type': 'Organization',
+      name: SITE_NAME,
+      logo: { '@type': 'ImageObject', url: LOGO_URL },
+    },
+    datePublished: p.publishedAt || p.updatedAt || undefined,
+    dateModified: p.updatedAt || p.publishedAt || undefined,
+    mainEntityOfPage: { '@type': 'WebPage', '@id': url },
+    url,
+  };
+  // JSON-LD 直接內嵌，跳脫 < 避免提早結束 script
+  return JSON.stringify(data).replace(/</g, '\\u003c');
+}
+
 function articlePage(p) {
   const cat = p.categories?.[0]?.label || '補助專欄';
   const date = fmtDate(p.publishedAt || p.updatedAt);
@@ -112,6 +146,21 @@ function articlePage(p) {
 <meta charset="utf-8">
 <title>${esc(p.title)}｜亞瑟教練</title>
 <meta name="description" content="${esc(p.description)}">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="${canonicalUrl(p)}">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="${esc(SITE_NAME)}">
+<meta property="og:title" content="${esc(p.title)}">
+<meta property="og:description" content="${esc(p.description)}">
+<meta property="og:url" content="${canonicalUrl(p)}">
+<meta property="og:image" content="${esc(p.imageUrl || LOGO_URL)}">
+<meta property="article:published_time" content="${esc(p.publishedAt || p.updatedAt || '')}">
+<meta property="article:modified_time" content="${esc(p.updatedAt || p.publishedAt || '')}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="${esc(p.title)}">
+<meta name="twitter:description" content="${esc(p.description)}">
+<meta name="twitter:image" content="${esc(p.imageUrl || LOGO_URL)}">
+<script type="application/ld+json">${articleJsonLd(p)}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@600;700;900&display=swap" rel="stylesheet">
 <style>
@@ -285,6 +334,36 @@ async function main() {
   );
   writeFileSync(blogFile, updated);
   console.log(`✅ blog.html 已更新（${posts.length} 張文章卡片）`);
+
+  // 產生 sitemap.xml（靜態主頁 + 每篇文章）與 robots.txt
+  writeSitemap(posts);
+}
+
+function writeSitemap(posts) {
+  const staticPages = [
+    { loc: '/', pri: '1.0' },
+    { loc: '/about.html', pri: '0.8' },
+    { loc: '/services.html', pri: '0.8' },
+    { loc: '/testimonials.html', pri: '0.7' },
+    { loc: '/blog.html', pri: '0.9' },
+    { loc: '/faq.html', pri: '0.6' },
+    { loc: '/booking.html', pri: '0.6' },
+  ];
+  const today = new Date().toISOString().slice(0, 10);
+  const urls = [];
+  for (const s of staticPages) {
+    urls.push(`  <url><loc>${SITE_URL}${s.loc}</loc><lastmod>${today}</lastmod><priority>${s.pri}</priority></url>`);
+  }
+  for (const p of posts) {
+    const lastmod = (p.updatedAt || p.publishedAt || '').slice(0, 10) || today;
+    urls.push(`  <url><loc>${canonicalUrl(p)}</loc><lastmod>${lastmod}</lastmod><priority>0.7</priority></url>`);
+  }
+  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.join('\n')}\n</urlset>\n`;
+  writeFileSync(join(ROOT, 'sitemap.xml'), sitemap);
+
+  const robots = `User-agent: *\nAllow: /\n\nSitemap: ${SITE_URL}/sitemap.xml\n`;
+  writeFileSync(join(ROOT, 'robots.txt'), robots);
+  console.log(`✅ sitemap.xml（${staticPages.length + posts.length} 個網址）與 robots.txt 已產生`);
 }
 
 main().catch((e) => {
