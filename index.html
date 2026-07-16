@@ -34,6 +34,11 @@
     header p[style*="font-size:22px"] { font-size: 19px !important; }
     body { padding-bottom: 76px !important; }
     #mobile-cta { display: flex !important; }
+    /* 手機版：報名表單排到文案前面，點「報名」立刻看到欄位，不用再滑 */
+    #signup .rwd-col > div:last-child { order: -1; }
+    #signup .rwd-col { gap: 28px !important; }
+    #signup { padding-top: 32px !important; scroll-margin-top: 8px; }
+    #signup > .rwd-col > div:first-child { padding-top: 0 !important; }
   }
   #mobile-cta { display: none; position: fixed; left: 0; right: 0; bottom: 0; z-index: 90; background: #071527; border-top: 1px solid rgba(201,162,75,0.4); padding: 10px 14px; box-shadow: 0 -6px 24px rgba(0,0,0,0.35); gap: 10px; align-items: center; }
   #mobile-cta a { flex: 1; text-align: center; background: #C9A24B; color: #071527; font-size: 16px; font-weight: 900; padding: 14px 12px; border-radius: 8px; }
