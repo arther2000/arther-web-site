@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta charset="utf-8">
+<title>AI 撰寫政府補助計畫書指南 2026：選案到送件實戰｜亞瑟教練</title>
+<meta name="description" content="用 AI 寫補助計畫書會被審查委員發現嗎？亞瑟教練實戰拆解選案、AI 初稿、去 AI 味到送件全流程，3 週工作縮成 3 天，附實測 Prompt。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@600;700;900&display=swap" rel="stylesheet">
+<style>
+  body { margin: 0; background: #fff; font-family: 'Noto Sans TC', sans-serif; color: #1C2635; }
+  a { color: #B8913D; text-decoration: none; }
+  a:hover { color: #96742C; }
+  .ghl-article { font-size: 17px; line-height: 2.1; color: #333D4B; }
+  .ghl-article h1, .ghl-article h2 { font-family: 'Noto Serif TC', serif; font-weight: 900; color: #0B1D33; line-height: 1.5; margin: 48px 0 20px; }
+  .ghl-article h1 { font-size: 32px; }
+  .ghl-article h2 { font-size: 28px; }
+  .ghl-article h3 { font-family: 'Noto Serif TC', serif; font-size: 22px; font-weight: 900; color: #0B1D33; margin: 40px 0 16px; }
+  .ghl-article p { margin: 0 0 28px; }
+  .ghl-article img { max-width: 100%; height: auto; border-radius: 12px; }
+  .ghl-article ul, .ghl-article ol { margin: 0 0 28px; padding-left: 28px; }
+  .ghl-article li { margin-bottom: 10px; }
+  .ghl-article blockquote { border-left: 4px solid #C9A24B; margin: 0 0 28px; padding: 8px 0 8px 24px; color: #5C6675; background: #F8F6F1; border-radius: 0 8px 8px 0; }
+  .ghl-article table { width: 100%; border-collapse: collapse; margin: 0 0 28px; font-size: 15px; }
+  .ghl-article th, .ghl-article td { border: 1px solid #E7E1D4; padding: 10px 14px; text-align: left; }
+  .ghl-article th { background: #F8F6F1; color: #0B1D33; }
+  @media (max-width: 900px) {
+    nav { flex-wrap: wrap !important; height: auto !important; padding: 12px 16px !important; row-gap: 8px !important; }
+    nav > div { flex-wrap: wrap !important; gap: 8px 14px !important; font-size: 13px !important; }
+    section, header, footer, article { padding-left: 20px !important; padding-right: 20px !important; }
+    h1 { font-size: 32px !important; }
+    h2 { font-size: 26px !important; }
+    div[style*="grid-template-columns"], a[style*="grid-template-columns"] { grid-template-columns: 1fr !important; }
+    .rwd-col { flex-direction: column !important; align-items: center !important; text-align: center !important; }
+  }
+</style>
+</helmet>
+
+<nav style="position:sticky;top:0;z-index:50;background:#0B1D33;display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:72px;box-shadow:0 2px 12px rgba(7,21,39,0.35)">
+  <a href="index.html" style="display:flex;align-items:baseline;gap:10px;color:#fff">
+    <span style="font-family:'Noto Serif TC',serif;font-size:22px;font-weight:900;color:#fff">亞瑟教練</span>
+    <span style="font-size:12px;letter-spacing:0.18em;color:#C9A24B;font-weight:700">ARTHUR WU</span>
+  </a>
+  <div style="display:flex;align-items:center;gap:32px;font-size:15px;font-weight:500">
+    <a href="index.html" style="color:#E8E4DB" style-hover="color:#C9A24B">首頁</a>
+    <a href="about.html" style="color:#E8E4DB" style-hover="color:#C9A24B">關於教練</a>
+    <a href="services.html" style="color:#E8E4DB" style-hover="color:#C9A24B">課程服務</a>
+    <a href="testimonials.html" style="color:#E8E4DB" style-hover="color:#C9A24B">學員見證</a>
+    <a href="blog.html" style="color:#C9A24B;border-bottom:2px solid #C9A24B;padding-bottom:2px">補助專欄</a>
+    <a href="faq.html" style="color:#E8E4DB" style-hover="color:#C9A24B">常見問題</a>
+    <a href="booking.html" style="color:#0B1D33;background:#fff;padding:10px 20px;border-radius:6px;font-weight:700" style-hover="background:#E8E4DB">預約諮詢</a>
+    <a href="index.html#signup" style="color:#071527;background:#C9A24B;padding:10px 20px;border-radius:6px;font-weight:900" style-hover="background:#D9B45E">🔥 報名說明會</a>
+  </div>
+</nav>
+
+<!-- ARTICLE HEADER -->
+<header style="background:linear-gradient(160deg,#0B1D33 0%,#071527 70%);color:#fff;padding:88px 48px">
+  <div style="max-width:760px;margin:0 auto">
+    <a href="blog.html" style="font-size:14px;font-weight:700;color:#C9A24B">← 回補助專欄</a>
+    <div style="font-size:14px;color:#7D8A9B;margin:24px 0 16px">政府補助案申請攻略・2026/07/11</div>
+    <h1 style="font-family:'Noto Serif TC',serif;font-size:44px;line-height:1.5;font-weight:900;margin:0">AI 撰寫政府補助計畫書指南 2026：選案到送件實戰</h1>
+  </div>
+</header>
+
+<!-- COVER -->
+<section style="padding:56px 48px 0">
+  <div style="max-width:760px;margin:0 auto">
+    <img src="https://export-download.canva.com/JnjwY/DAHPJEJnjwY/-1/0/0001-2320988937842103045.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAQYCGKMUH5AO7UJ26%2F20260711%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20260711T153317Z&amp;X-Amz-Expires=51178&amp;X-Amz-Signature=ab65468c9abc2816637f3206b5a0b118f531a5f1124501687916fbb1e51951d2&amp;X-Amz-SignedHeaders=host%3Bx-amz-expected-bucket-owner&amp;response-expires=Sun%2C%2012%20Jul%202026%2005%3A46%3A15%20GMT" alt="用 AI 撰寫政府補助計畫書的完整流程插畫－亞瑟教練" style="width:100%;border-radius:16px;display:block">
+  </div>
+</section>
+
+<!-- ARTICLE BODY -->
+<article class="ghl-article" style="padding:56px 48px 80px;max-width:760px;margin:0 auto">
+<p>你想申請 SBIR、SIIR 或 SITI，但一想到要寫 30 頁的計畫書就頭痛？外包給顧問，撰寫費動輒 8 到 9 萬、過件還要抽 15% 到 20%。其實在 2026 年，用 AI 撰寫政府補助計畫書已經是完全可行的做法——前提是你要用對方法。</p>
+<p>這篇文章是我輔導中小企業申請補助的實戰整理，會帶你走完從選案、用 AI 生成初稿、去除 AI 味、到送件前檢查的完整流程。過去要花 2 到 3 週的計畫書，用對流程可以壓縮到 3 天內完成初稿，而且品質不打折。</p>
+<h2>先搞清楚：用 AI 寫計畫書，審查委員會在意嗎？</h2>
+<p>先回答大家最擔心的問題：<strong>用 AI 寫計畫書不違規，審查委員在意的是內容真實性，不是你用什麼工具寫。</strong></p>
+<p>行政院已發布「使用生成式 AI 參考指引」，政府部門自己也在用 AI。補助申請真正的紅線是「聲明不實」——內容造假被發現，會被駁回申請、撤銷補助、追回已撥付的款項。所以風險從來不在 AI，而在你讓 AI 編造了不存在的數據。</p>
+<p>審查委員真正在乎三件事：商業模式的可行性、技術或服務的創新性、團隊的執行能力。AI 可以幫你把這三件事「表達」得更清楚，但不能幫你「無中生有」。記住這個原則，後面的流程才走得通。</p>
+<h2>第一步：選對補助案，比寫好計畫書更重要</h2>
+<p>很多人失敗不是計畫書寫不好，而是一開始就選錯案子。2026 年中小企業最常申請的三大補助：</p>
+<table>
+<thead>
+<tr>
+<th>補助案</th>
+<th>適合對象</th>
+<th>補助上限</th>
+<th>特性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SBIR</td>
+<td>有創新研發需求的中小企業</td>
+<td>Phase 1 最高 150 萬；Phase 2 每年最高 600 萬</td>
+<td>隨到隨審，通過率約 4 成</td>
+</tr>
+<tr>
+<td>SIIR</td>
+<td>商業服務業（零售、餐飲、生活服務等）</td>
+<td>個別創新最高 150 萬；合作創新最高 500 萬</td>
+<td>每年固定徵件，115 年度已於 1/30 截止</td>
+</tr>
+<tr>
+<td>SITI</td>
+<td>設立於臺北市的公司</td>
+<td>創業類最高 100 萬；研發類最高 500 萬</td>
+<td>隨到隨審、先到先審</td>
+</tr>
+</tbody>
+</table>
+<p>選案的判斷邏輯很簡單：你的「創新點」是研發技術（選 SBIR）、服務模式（選 SIIR）、還是你是台北市新創（先看 SITI）。把公司登記資料、營業項目、想做的事丟給 AI，請它幫你比對三案的申請資格，10 分鐘就能完成初步判斷。</p>
+<h2>第二步：餵對資料，AI 才寫得出能過件的初稿</h2>
+<p>直接對 ChatGPT 說「幫我寫一份 SBIR 計畫書」，你只會得到一篇空泛的模板文。AI 寫計畫書的品質，取決於你餵給它的材料。動筆前先準備這五樣：</p>
+<ol>
+<li><strong>公司基本資料</strong>：設立時間、資本額、員工數、主要產品與營收結構</li>
+<li><strong>要解決的問題</strong>：客戶的痛點是什麼？現有解法為什麼不夠好？</li>
+<li><strong>你的創新點</strong>：技術差異、服務模式差異，越具體越好</li>
+<li><strong>市場證據</strong>：市調數據、使用者回饋、意向訂單、MVP 驗證結果</li>
+<li><strong>申請須知原文</strong>：把該補助案的申請須知 PDF 全文餵給 AI</li>
+</ol>
+<p>第五點是多數人漏掉的關鍵。把申請須知餵給 AI 之後，請它「以審查委員的角度，列出這個計畫案的評分重點」，AI 生成的內容就會自動對焦官方要的東西，而不是自由發揮。</p>
+<p>實測可用的起手 Prompt：</p>
+<blockquote>
+<p>你是有 10 年經驗的政府補助計畫主持人。以下是【申請須知全文】與【我的公司資料】。請先列出這個補助案的審查重點，再依官方計畫書格式產出目錄架構，每一章節標注：審查委員想在這章看到什麼。</p>
+</blockquote>
+<p>先要架構、再逐章生成，一次生一章並逐段修改，品質遠比一次生成全文好。</p>
+<h2>第三步：去 AI 味——審查委員最常打槍的三個破綻</h2>
+<p>AI 初稿不能直接送件。輔導經驗中，「AI 語體」的計畫書有三個一眼就被看穿的破綻：</p>
+<p><strong>破綻一：形容詞多、數字少。</strong> AI 很愛寫「大幅提升」「顯著改善」「賦能產業」。全部改成具體數字：「導入後客服回覆時間從 4 小時縮短到 10 分鐘」。你的真實營運數據，是 AI 無法替代、審查委員最想看的東西。</p>
+<p><strong>破綻二：KPI 與查核點是通用模板。</strong> AI 生成的查核點框架可以用，但里程碑必須對應你的實際研發時程與人力配置。預算編列（人事費、委外費、設備費）務必自己核算，AI 對經費科目的規定經常過時。</p>
+<p><strong>破綻三：沒有「只有你寫得出來」的內容。</strong> 產業的眉角、失敗過的嘗試、客戶的原話——這些 Know-How 是 AI 不知道的。每一章至少要有一段是你的第一手經驗，這正是 E-E-A-T 的「經驗」，也是過件計畫書和模板文的差距。</p>
+<h2>第四步：送件前的 AI 輔助檢查清單</h2>
+<p>初稿完成後，讓 AI 換一個角色幫你挑毛病：</p>
+<ul>
+<li>請 AI 扮演「嚴格的審查委員」，針對計畫書提出 10 個質疑，你逐一回答並補進內文</li>
+<li>檢查創新性論述：是否清楚說明「差異性」與「不可取代性」</li>
+<li>檢查一致性：摘要、目標、KPI、預算四者的數字是否互相吻合</li>
+<li>用 AI 核對申請須知的形式要件：頁數、格式、應備附件、線上申請流程</li>
+</ul>
+<p>最後提醒：SBIR 補助款不得超過計畫總經費 50%，自籌款的資金證明要提前準備；SIIR 需要工商憑證才能線上送件，憑證申請要 3 到 5 個工作天，不要拖到截止日前才辦。</p>
+<h2>常見問題（FAQ）</h2>
+<p><strong>Q：用 AI 寫的補助計畫書會被審查委員發現嗎？</strong><br />A：如果直接送 AI 原稿，會。AI 語體的特徵（空泛形容詞、通用 KPI、缺乏第一手經驗）很容易辨識。但依本文流程加入真實數據與產業 Know-How 後，AI 只是打字更快的你，委員審的是內容不是工具。</p>
+<p><strong>Q：AI 寫計畫書可以節省多少時間？</strong><br />A：實務上，原本 2 到 3 週的撰寫期可以壓縮到 3 天左右完成可送件的版本；單純初稿生成約 4 到 5 小時。省下的時間應該投資在市場驗證數據的準備上。</p>
+<p><strong>Q：SBIR 的通過率大概多少？</strong><br />A：依 SBIR 計畫辦公室統計，中央型 SBIR 歷年平均通過率約 40%，部分縣市的地方型 SBIR 可達 50% 以上。通過率的關鍵在創新性論述與商業化證據，而非文筆。</p>
+<p><strong>Q：找顧問代寫跟自己用 AI 寫，怎麼選？</strong><br />A：顧問行情約 8 到 9 萬撰寫費加上 15% 到 20% 過件抽成，優勢是熟悉審查眉角；自己用 AI 寫成本趨近於零，但要投入 3 到 5 天。折衷做法是用 AI 完成初稿後，找顧問做送件前健檢，費用可壓到全案委託的三分之一以下。</p>
+<p><strong>Q：一份計畫書可以同時申請多個補助案嗎？</strong><br />A：同一計畫內容不得重複領取政府補助。但你可以把不同的創新主題分別投遞不同計畫，例如研發主題投 SBIR、服務模式創新投 SIIR。</p>
+<h2>結語：AI 是加速器，真實性是入場券</h2>
+<p>用 AI 撰寫政府補助計畫書的正確心法：讓 AI 處理架構、文字與格式這些「重複性工作」，你專注在創新論述、真實數據與產業經驗這些「不可替代的內容」。工具會進步，但審查委員要的東西十年沒變過——一個可行、創新、你真的做得到的計畫。</p>
+<p>如果你想拿到我實測過的完整 Prompt 組合，或需要送件前的計畫書健檢，歡迎透過亞瑟教練官網預約 30 分鐘免費諮詢，我會直接告訴你這份計畫書過件機率高不高、卡在哪。</p>
+</article>
+
+<!-- AUTHOR BOX -->
+<section style="padding:0 48px 80px">
+  <div class="rwd-col" style="max-width:760px;margin:0 auto;background:#0B1D33;border-radius:16px;padding:40px;display:flex;gap:32px;align-items:center;color:#fff">
+    <img src="assets/arthur.jpg" alt="亞瑟教練" style="width:96px;height:96px;object-fit:cover;object-position:top;border-radius:100px;flex-shrink:0">
+    <div style="flex:1">
+      <div style="font-family:'Noto Serif TC',serif;font-size:20px;font-weight:900;margin-bottom:8px">亞瑟教練 Arthur Wu</div>
+      <p style="font-size:14px;line-height:1.8;color:#B9C2CE;margin:0 0 16px">政府補助申請實戰專家。親自取得 5 項指標性補助與投資案，輔導學員累計通過補助超過 1,000 萬。</p>
+      <a href="index.html#signup" style="font-size:14px;font-weight:900;color:#C9A24B">報名免費說明會 →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="background:#071527;color:#7D8A9B;padding:64px 48px 40px">
+  <div style="max-width:1200px;margin:0 auto">
+    <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:48px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,0.08)">
+      <div>
+        <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:16px">
+          <span style="font-family:'Noto Serif TC',serif;font-size:20px;font-weight:900;color:#fff">亞瑟教練</span>
+          <span style="font-size:11px;letter-spacing:0.18em;color:#C9A24B;font-weight:700">ARTHUR WU</span>
+        </div>
+        <p style="font-size:14px;line-height:1.9;margin:0;max-width:360px">政府補助申請實戰專家・企業商業變現與數位轉型顧問。幫助創業者與中小企業，用政府的資源加速事業成長。</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px;font-size:14px">
+        <div style="color:#DCE2EA;font-weight:700;margin-bottom:4px">網站導覽</div>
+        <a href="about.html" style="color:#7D8A9B" style-hover="color:#C9A24B">關於教練</a>
+        <a href="services.html" style="color:#7D8A9B" style-hover="color:#C9A24B">課程服務</a>
+        <a href="testimonials.html" style="color:#7D8A9B" style-hover="color:#C9A24B">學員見證</a>
+        <a href="blog.html" style="color:#7D8A9B" style-hover="color:#C9A24B">補助專欄</a>
+        <a href="faq.html" style="color:#7D8A9B" style-hover="color:#C9A24B">常見問題</a>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px;font-size:14px">
+        <div style="color:#DCE2EA;font-weight:700;margin-bottom:4px">開始行動</div>
+        <a href="index.html#signup" style="color:#C9A24B;font-weight:700">🔥 報名免費說明會</a>
+        <a href="booking.html" style="color:#7D8A9B" style-hover="color:#C9A24B">預約 1:1 諮詢</a>
+      </div>
+    </div>
+    <p style="font-size:12px;line-height:1.9;margin:32px 0 0;color:#4E5B6B">【免責聲明】本文為教學示意內容。依法律規定，我們無法也不會保證您透過我們的課程、資訊或策略，能夠獲得特定金額的補助。© 2026 亞瑟教練 Arthur Wu</p>
+  </div>
+</footer>
+
+</x-dc>
+</body>
+</html>
