@@ -18,8 +18,16 @@
   body { margin: 0; background: #F8F6F1; font-family: 'Noto Sans TC', sans-serif; color: #1C2635; }
   a { color: #B8913D; text-decoration: none; }
   a:hover { color: #96742C; }
-  .doc-card { background:#fff; border:1px solid #E7E1D4; border-radius:14px; overflow:hidden; box-shadow:0 12px 32px rgba(11,29,51,0.08); display:flex; flex-direction:column; }
-  .doc-shot { width:100%; display:block; background:#EDEAE2; border-bottom:1px solid #E7E1D4; }
+  .doc-card { background:#fff; border:1px solid #E7E1D4; border-radius:14px; overflow:hidden; box-shadow:0 12px 32px rgba(11,29,51,0.08); display:flex; flex-direction:column; margin-bottom:36px; }
+  .doc-figure { position:relative; background:#EDEAE2; border-bottom:1px solid #E7E1D4; cursor:zoom-in; }
+  .doc-shot { width:100%; height:auto; display:block; }
+  .doc-zoom { position:absolute; right:14px; bottom:14px; background:rgba(7,21,39,0.82); color:#fff; font-size:12px; font-weight:700; padding:7px 13px; border-radius:20px; pointer-events:none; }
+  .doc-body { padding:32px 38px; display:flex; flex-direction:column; gap:14px; }
+  /* 燈箱：點文件放大看細節 */
+  #lb { display:none; position:fixed; inset:0; z-index:1000; background:rgba(7,21,39,0.92); align-items:center; justify-content:center; padding:24px; cursor:zoom-out; }
+  #lb.show { display:flex; }
+  #lb img { max-width:100%; max-height:92vh; border-radius:8px; box-shadow:0 30px 80px rgba(0,0,0,0.6); }
+  #lb .lb-x { position:absolute; top:18px; right:24px; color:#fff; font-size:34px; line-height:1; background:none; border:none; cursor:pointer; }
   @media (max-width: 900px) {
     nav { flex-wrap: wrap !important; height: auto !important; padding: 12px 16px !important; row-gap: 8px !important; }
     nav > div { flex-wrap: wrap !important; gap: 8px 14px !important; font-size: 13px !important; }
@@ -92,12 +100,33 @@
       <p style="font-size:16px;line-height:2;color:#5C6675;max-width:760px;margin:0 auto">不同縣市、不同產業、不同補助案——同一套方法。每一份都標註了實際核定金額與期間，你可以自己核對。</p>
     </div>
 
-    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:28px">
+    <div style="max-width:940px;margin:0 auto">
+
+      <!-- 0. 國貿署 海外據點 330萬（單筆最高） -->
+      <div class="doc-card">
+        <div class="doc-figure">
+          <img class="doc-shot" src="assets/web/case-overseas-33m.jpg" alt="經濟部國際貿易署 114 年度補助廠商分散及開拓海外市場計畫核定名單，學員公司在列（其他廠商資料已遮蔽）" loading="lazy" decoding="async" width="1200" height="721">
+          <span class="doc-zoom">🔍 點擊放大</span>
+        </div>
+        <div class="doc-body">
+          <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+            <span style="background:#C9A24B;color:#071527;font-size:12px;font-weight:900;padding:5px 12px;border-radius:6px">單筆最高 330 萬</span>
+            <span style="font-size:13px;color:#8A93A1;font-weight:700">經濟部國際貿易署・海外據點</span>
+          </div>
+          <h3 style="font-family:'Noto Serif TC',serif;font-size:23px;font-weight:900;color:#0B1D33;margin:0;line-height:1.5">114 年度補助廠商分散及開拓海外市場計畫<br>核定名單在列</h3>
+          <p style="font-size:15px;line-height:1.95;color:#5C6675;margin:0">學員<strong style="color:#0B1D33">悠活原力股份有限公司（創辦人 Steven）</strong>通過經濟部國際貿易署補助，<strong style="color:#0B1D33">核定 330 萬元</strong>，是目前學員單筆最高的過案金額。核定名單由主管機關公開公告，可自行查證。</p>
+          <div style="background:#F8F6F1;border-left:3px solid #C9A24B;padding:12px 16px;font-size:14px;line-height:1.8;color:#5C6675">保健品牌要打海外市場，最大的門檻是通路與行銷預算。這個計畫補的正是這一塊——<strong style="color:#0B1D33">選對補助案，等於讓政府幫你出海外拓展的錢</strong>。</div>
+          <div style="font-size:12px;color:#A0A8B4;line-height:1.7">※ 名單中其他無關廠商之公司名稱與計畫名稱、以及合照中其他人士，均已遮蔽處理。</div>
+        </div>
+      </div>
 
       <!-- 1. 台北市產發局 文創 100萬 -->
       <div class="doc-card">
-        <img class="doc-shot" src="assets/web/case-taipei-culture-1m.jpg" alt="台北市產業發展創業補助核准公文，核定 100 萬元（已去識別化）" loading="lazy" decoding="async" width="1200" height="639">
-        <div style="padding:28px 30px;display:flex;flex-direction:column;gap:12px;flex:1">
+        <div class="doc-figure">
+          <img class="doc-shot" src="assets/web/case-taipei-culture-1m.jpg" alt="台北市產業發展創業補助核准公文，核定 100 萬元（已去識別化）" loading="lazy" decoding="async" width="1200" height="639">
+          <span class="doc-zoom">🔍 點擊放大</span>
+        </div>
+        <div class="doc-body">
           <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
             <span style="background:#0B1D33;color:#C9A24B;font-size:12px;font-weight:900;padding:5px 12px;border-radius:6px">核准 100 萬</span>
             <span style="font-size:13px;color:#8A93A1;font-weight:700">台北市產業發展局・文創產業</span>
@@ -110,8 +139,11 @@
 
       <!-- 2. 經濟部中央型 SBIR -->
       <div class="doc-card">
-        <img class="doc-shot" src="assets/web/case-moea-sbir-520k.jpg" alt="經濟部小型企業創新研發計畫 SBIR 審查結果，核定補助款 52 萬元（已去識別化）" loading="lazy" decoding="async" width="863" height="769">
-        <div style="padding:28px 30px;display:flex;flex-direction:column;gap:12px;flex:1">
+        <div class="doc-figure">
+          <img class="doc-shot" src="assets/web/case-moea-sbir-520k.jpg" alt="經濟部小型企業創新研發計畫 SBIR 審查結果，核定補助款 52 萬元（已去識別化）" loading="lazy" decoding="async" width="863" height="769">
+          <span class="doc-zoom">🔍 點擊放大</span>
+        </div>
+        <div class="doc-body">
           <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
             <span style="background:#0B1D33;color:#C9A24B;font-size:12px;font-weight:900;padding:5px 12px;border-radius:6px">核定 52 萬</span>
             <span style="font-size:13px;color:#8A93A1;font-weight:700">經濟部中央型 SBIR・新創產品</span>
@@ -124,8 +156,11 @@
 
       <!-- 3. 台南 SBIR -->
       <div class="doc-card">
-        <img class="doc-shot" src="assets/web/case-tainan-sbir-pass.jpg" alt="114 年度臺南市地方產業創新研發推動計畫審查通過通知（已去識別化）" loading="lazy" decoding="async" width="1059" height="685">
-        <div style="padding:28px 30px;display:flex;flex-direction:column;gap:12px;flex:1">
+        <div class="doc-figure">
+          <img class="doc-shot" src="assets/web/case-tainan-sbir-pass.jpg" alt="114 年度臺南市地方產業創新研發推動計畫審查通過通知（已去識別化）" loading="lazy" decoding="async" width="1059" height="685">
+          <span class="doc-zoom">🔍 點擊放大</span>
+        </div>
+        <div class="doc-body">
           <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
             <span style="background:#0B1D33;color:#C9A24B;font-size:12px;font-weight:900;padding:5px 12px;border-radius:6px">審查通過</span>
             <span style="font-size:13px;color:#8A93A1;font-weight:700">台南市地方型 SBIR・設計產業</span>
@@ -138,8 +173,11 @@
 
       <!-- 4. 台北市產發局 連鎖 100萬 -->
       <div class="doc-card">
-        <img class="doc-shot" src="assets/web/case-taipei-chain-1m.jpg" alt="臺北市政府產業發展創業補助核准函，創業補助上限 100 萬元（已去識別化）" loading="lazy" decoding="async" width="1200" height="551">
-        <div style="padding:28px 30px;display:flex;flex-direction:column;gap:12px;flex:1">
+        <div class="doc-figure">
+          <img class="doc-shot" src="assets/web/case-taipei-chain-1m.jpg" alt="臺北市政府產業發展創業補助核准函，創業補助上限 100 萬元（已去識別化）" loading="lazy" decoding="async" width="1200" height="551">
+          <span class="doc-zoom">🔍 點擊放大</span>
+        </div>
+        <div class="doc-body">
           <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
             <span style="background:#0B1D33;color:#C9A24B;font-size:12px;font-weight:900;padding:5px 12px;border-radius:6px">核准 100 萬</span>
             <span style="font-size:13px;color:#8A93A1;font-weight:700">台北市產業發展局・連鎖產業</span>
@@ -244,6 +282,43 @@
     <p style="font-size:12px;line-height:1.9;margin:32px 0 0;color:#4E5B6B">【免責聲明】我們不相信所謂的「輕鬆免費拿補助」。成功申請補助來自正確的方法、準備充分的計畫，以及清楚傳達價值給評審委員。依法律規定，我們無法也不會保證您透過我們的課程、資訊或策略，能夠獲得特定金額的補助；補助的成功與否，取決於您自身的行動、計畫完整度與執行力。本頁面所示公文均為學員實際取得之政府文件，並已去識別化以保護學員與其企業隱私；個案結果不代表所有人都能取得相同成果。© 2026 亞瑟教練 Arthur Wu</p>
   </div>
 </footer>
+
+<!-- 文件放大燈箱 -->
+<div id="lb" role="dialog" aria-modal="true" aria-label="放大檢視文件">
+  <button class="lb-x" id="lb-x" aria-label="關閉">&times;</button>
+  <img id="lb-img" src="" alt="">
+</div>
+
+<script>
+(function () {
+  // support.js 會替換 x-dc 節點，故事件一律委派在 document 上
+  var lb = function () { return document.getElementById('lb'); };
+  document.addEventListener('click', function (e) {
+    var fig = e.target.closest && e.target.closest('.doc-figure');
+    if (fig) {
+      var img = fig.querySelector('img');
+      if (!img) return;
+      var box = lb();
+      var big = document.getElementById('lb-img');
+      big.src = img.getAttribute('src');
+      big.alt = img.getAttribute('alt') || '';
+      box.classList.add('show');
+      document.body.style.overflow = 'hidden';
+      return;
+    }
+    if (e.target.closest && (e.target.closest('#lb-x') || e.target.id === 'lb')) {
+      lb().classList.remove('show');
+      document.body.style.overflow = '';
+    }
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && lb() && lb().classList.contains('show')) {
+      lb().classList.remove('show');
+      document.body.style.overflow = '';
+    }
+  });
+})();
+</script>
 
 </x-dc>
 </body>
